@@ -144,7 +144,7 @@
         left: 0;
 
         background-color: rgba(34, 32, 32, 0.1);
-        backdrop-filter: blur(40px);
+        backdrop-filter: blur(30px);
     }
 
     .card {
@@ -182,6 +182,10 @@
         color: #fff;
         font-size: 65px;
         font-family: 'Quantify', sans-serif;
+    }
+
+    .welcome br {
+        display: none;
     }
 
 
@@ -285,6 +289,70 @@
         font-family: 'Coco Gothic', sans-serif;
     }
 
+    @media only screen and (max-width: 1000px) {
+
+        .background::before {
+            width: 80vh;
+            height: 80vh;
+            top: -35vh;
+            left: -40vw;
+        }
+
+        .background::after {
+            width: 40vw;
+            height: 40vw;
+            right: -5vw;
+        }
+
+        .blob::before {
+            width: 30vw;
+            height: 30vw;
+            left: 5vw;
+            bottom: 10vh;
+            transform-origin: 30% 30%;
+        }
+
+        .blob::after {
+            width: 60vw;
+            height: 60vw;
+            right: -10vw;
+            bottom: -10vh;
+            transform-origin: 30% 30%;
+        }
+
+        .card {
+            width: 90%;
+            height: max-content;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content .welcome br {
+            display: block;
+        }
+
+        .content .header {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
+        .content .header br {
+            display: none;
+        }
+
+        .content .asset {
+            display: none;
+        }
+
+        .content .socials {
+            padding-top: 50px;
+        }
+
+    }
 
 
 
@@ -298,7 +366,7 @@
         <div class="card">
             <div class="content">
                 <div class="welcome">
-                    Hello there, I'm Pierre du Toit
+                    Hello there,<br> I'm Pierre du Toit
                 </div>
                 <div class="header">
                     This website is
