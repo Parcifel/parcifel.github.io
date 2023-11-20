@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style/globals.css">
+    
     <title>Portfolio</title>
 </head>
 
 <style>
-    html, body {
-        margin: 0;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
         padding: 0;
+        margin: 0;
+    }
+
+    html, body {
         width: 100vw;
         height: 100vh;
     }
-
+/*
     .background {
         width: 100%;
         height: 100%;
@@ -33,13 +43,77 @@
 
         background-color: rgba(34, 32, 32, 0.1);
         backdrop-filter: blur(30px);
+    }*/
+
+    .container {
+        background-color: var(--black);
     }
+
+    .neon-container {
+        font-family: var(--neon-font);
+        background: linear-gradient(135deg, var(--neon-cl1), var(--neon-cl2));
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .argon-container {
+        font-family: var(--argon-font);
+        background: linear-gradient(135deg, var(--argon-cl1), var(--argon-cl2));
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .xenon-container {
+        font-family: var(--xenon-font);
+        background: linear-gradient(135deg, var(--xenon-cl1), var(--xenon-cl2));
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .radon-container {
+        font-family: var(--radon-font);
+        background: linear-gradient(135deg, var(--radon-cl1), var(--radon-cl2));
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .krypton-container {
+        font-family: var(--krypton-font);
+        background: linear-gradient(135deg, var(--krypton-cl1), var(--krypton-cl2));
+        width: 100vw;
+        height: 20vh;
+    }
+
 
 </style>
 
 <body>
-    <div class="background">
+    <div class="container">
+        <div class="neon-container">
+            <h1> Neon Container </h1>
+            <h2> Media_Server-FL </h2>
+        </div>
+        <div class="argon-container">
+            <h1> Argon Container </h1>
+            <h2> Stock_Taking-DJ </h2>
+        </div>
+        <div class="xenon-container">
+            <h1> Xenon Container </h1>
+            <h2> Spaces-CPP </h2>
+        </div>
+        <div class="radon-container">
+            <h1> Radon Container </h1>
+            <h2> Chess-Py-CPP </h2>
+        </div>
+        <div class="krypton-container">
+            <h1> Krypton Container </h1>
+            <h2> Automation-SC </h2>
+        </div>
+    </div>  
+
+
+    <!-- <div class="background">
         <img src="images/Background.png" alt="background">   
-    </div>
+    </div> -->
 </body>
 </html>

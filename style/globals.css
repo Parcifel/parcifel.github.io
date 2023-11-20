@@ -1,0 +1,34 @@
+@import url("Argon.Font.css");
+@import url("Neon.Font.css");
+@import url("Xenon.Font.css");
+@import url("Radon.Font.css");
+@import url("Krypton.Font.css");
+
+:root {
+    --pink: #df00ff;
+    --purple: #bf00ff;
+    --blue-purple: #8a00ff;
+    --gray: #1c1c1c;
+    --black: #020102;
+
+
+    --neon-font: Neon;
+    --neon-cl1: #FF9482;
+    --neon-cl2: #7D77FF;
+
+    --argon-font: Argon;
+    --argon-cl1: #FFCF1B;
+    --argon-cl2: #FF881B;
+
+    --xenon-font: "Xenon";
+    --xenon-cl1: #82E135; 
+    --xenon-cl2: #325178;
+
+    --radon-font: "Radon";
+    --radon-cl1: #3499FF;
+    --radon-cl2: #3A3985;
+
+    --krypton-font: "Krypton";
+    --krypton-cl1: #B65EBA;
+    --krypton-cl2: #2E8DE1;
+}
