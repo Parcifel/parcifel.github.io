@@ -20,15 +20,15 @@
     --argon-cl1: #FFCF1B;
     --argon-cl2: #FF881B;
 
-    --xenon-font: "Xenon";
+    --xenon-font: Xenon;
     --xenon-cl1: #82E135; 
     --xenon-cl2: #325178;
 
-    --radon-font: "Radon";
+    --radon-font: Radon;
     --radon-cl1: #3499FF;
     --radon-cl2: #3A3985;
 
-    --krypton-font: "Krypton";
+    --krypton-font: Krypton;
     --krypton-cl1: #B65EBA;
     --krypton-cl2: #2E8DE1;
 }

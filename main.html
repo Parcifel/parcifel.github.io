@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/fonts.css">
+    <title>Portfolio</title>
+</head>
+
+<style>
+    :root {
+        --black: #0a080a;
+        --black-transparent: rgba(10, 8, 10, 0.4);
+        --white: #E3E3E3;
+        --white-transparent: rgba(227, 227, 227, 0.3);
+
+        --primary-red: #F00B51;
+        --primary-purple: #7366FF;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html, body {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav {
+        width: calc(100vw - 16rem);
+        height: 10vh;
+        background-color: var(--black-transparent);
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        padding: 0 8rem;
+        align-items: center;
+    }
+
+    .nav-item {
+        color: var(--white);
+    }
+
+    .link-item {
+        cursor: pointer;
+        margin: 0 2rem;
+        font-family: var(--neon-font);
+    }
+
+    .link-item::after {
+        content: "";
+        display: block;
+        position: relative;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        transition: all .3s ease-in-out;
+    }
+
+    .link-item.active::after {
+        left: 0;
+        width: 100%;
+    }
+
+    .link-item:hover::after {
+        left: 0;
+        width: 100%;
+        transition: all .3s ease-in-out;
+    }
+
+    .alias {
+        margin-right: auto;
+        font-family: var(--krypton-font);
+
+        background: -webkit-linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-container {
+        width: calc(100vw - 24rem);
+        height: 95vh;
+        background-color: var(--black);
+        padding: 0 12rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-container .content-container {
+        position: relative;
+        left: 0;
+        width: max-content;
+        max-width: 60%;
+        padding-right: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-container .content-container h1 {
+        margin: 0.5rem 0;
+    }
+
+    .hero-container .content-container .greeting h1{
+        font-family: var(--krypton-font);
+
+        background: -webkit-linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-container .content-container .title h1{
+        font-family: var(--neon-font);
+        color: var(--white);
+        font-size: 3rem;
+    }
+
+    .hero-container .content-container .summary {
+        background-color: var(--white-transparent);
+        padding: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .hero-container .content-container .summary p {
+        margin: 0;
+        margin: 0.5rem 0;
+        font-family: var(--neon-font);
+        text-wrap: auto;
+        color: var(--white);
+    }
+
+    @keyframes rotate-gradient {
+        0% {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        }
+        25% {
+            background: linear-gradient(225deg, var(--primary-red), var(--primary-purple));
+        }
+        50% {
+            background: linear-gradient(315deg, var(--primary-red), var(--primary-purple));
+        }
+        75% {
+            background: linear-gradient(45deg, var(--primary-red), var(--primary-purple));
+        }
+        100% {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        }
+    }
+
+    .hero-container .content-container .summary .read-more p {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-container .content-container .summary .read-more {
+        cursor: pointer;
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        width: max-content;
+        font-family: var(--neon-font);
+        color: var(--white);
+        background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    }
+
+    .hero-container .image-container {
+        position: relative;
+        right: 0;
+        width: 75%;
+        height: 75%;
+        margin-top: auto;
+    }
+
+    .hero-container .image-container .main-headshot {
+        width: 100%;
+        height: 100%;
+        background-color: var(--white-transparent);
+    }
+
+</style>
+
+<body>
+    
+    <div class="nav">
+        <div class="alias nav-item">
+            <h1>Parcifel</h1>
+        </div>
+
+        <div class="home-link nav-item link-item active">
+            Home
+        </div>
+        <div class="about-link nav-item link-item">
+            About
+        </div>
+        <div class="portfolio-link nav-item link-item">
+            Portfolio
+        </div>
+        <div class="contact-link nav-item link-item">
+            Contact
+        </div>
+    </div>
+
+    <div class="hero-container">
+        <div class="content-container">
+            <div class="greeting">
+                <h1>Hello there ...</h1>
+            </div>
+            <div class="title">
+                <h1>I am Pierre du Toit</h1>
+            </div>
+            <div class="summary">
+                <p>
+                    I'm currently a student at the Stellenbosch University
+                    studying towards a BSc in Computer Science.
+                </p>
+                <p>
+                    I'm a passionate developer and I love to learn new things.
+                </p>
+                <div class="read-more">
+                    <p>Read More</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <div class="main-headshot"></div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    console.log("Hello Script!");
+</script>
+
+</html>
