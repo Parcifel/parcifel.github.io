@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/index.css">
-    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/nav.css">
     <script defer src="https://unpkg.com/swup@4"></script>
     <title>Portfolio</title>
 </head>
 
-<style></style>
+<style>
 
     html, body {
         width: 100vw;
@@ -64,14 +64,14 @@
 
 </body>
 
-<script src="static/includeHTML.js"></script>
-<script defer src="static/nav.js"></script>
+<script src="/static/includeHTML.js"></script>
+<script defer src="/static/nav.js"></script>
 <script>
     console.log("Hello Script!");
 
     /* Navigation */
     let nav_container = document.querySelector(".nav-container");
-    let nav_file = "./components/nav.html";
+    let nav_file = "/components/nav.html";
     includeHTML(nav_container, nav_file);
 
     let read_more = document.querySelector(".read-more");

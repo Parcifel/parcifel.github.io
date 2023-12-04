@@ -1,128 +1,128 @@
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Regular.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Regular.woff");
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Bold.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Bold.woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Italic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Italic.woff");
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-BoldItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-BoldItalic.woff");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Light.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Light.woff");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-LightItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-LightItalic.woff");
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-ExtraLight.woff");
+    src: url("/style/fonts/MonaspaceKrypton-ExtraLight.woff");
     font-weight: 200;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-ExtraLightItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-ExtraLightItalic.woff");
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Thin.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Thin.woff");
     font-weight: 100;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-ThinItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-ThinItalic.woff");
     font-weight: 100;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Black.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Black.woff");
     font-weight: 900;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-BlackItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-BlackItalic.woff");
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-ExtraBold.woff");
+    src: url("/style/fonts/MonaspaceKrypton-ExtraBold.woff");
     font-weight: 800;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-ExtraBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-ExtraBoldItalic.woff");
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-SemiBold.woff");
+    src: url("/style/fonts/MonaspaceKrypton-SemiBold.woff");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-SemiBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-SemiBoldItalic.woff");
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Medium.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Medium.woff");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-MediumItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-MediumItalic.woff");
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-Regular.woff");
+    src: url("/style/fonts/MonaspaceKrypton-Regular.woff");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Krypton";
-    src: url("fonts/MonaspaceKrypton-RegularItalic.woff");
+    src: url("/style/fonts/MonaspaceKrypton-RegularItalic.woff");
     font-weight: 400;
     font-style: italic;
 }

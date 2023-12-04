@@ -1,128 +1,128 @@
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Regular.woff");
+    src: url("/style/fonts/MonaspaceRadon-Regular.woff");
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Bold.woff");
+    src: url("/style/fonts/MonaspaceRadon-Bold.woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Italic.woff");
+    src: url("/style/fonts/MonaspaceRadon-Italic.woff");
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-BoldItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-BoldItalic.woff");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Light.woff");
+    src: url("/style/fonts/MonaspaceRadon-Light.woff");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-LightItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-LightItalic.woff");
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-ExtraLight.woff");
+    src: url("/style/fonts/MonaspaceRadon-ExtraLight.woff");
     font-weight: 200;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-ExtraLightItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-ExtraLightItalic.woff");
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Thin.woff");
+    src: url("/style/fonts/MonaspaceRadon-Thin.woff");
     font-weight: 100;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-ThinItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-ThinItalic.woff");
     font-weight: 100;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Black.woff");
+    src: url("/style/fonts/MonaspaceRadon-Black.woff");
     font-weight: 900;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-BlackItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-BlackItalic.woff");
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-ExtraBold.woff");
+    src: url("/style/fonts/MonaspaceRadon-ExtraBold.woff");
     font-weight: 800;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-ExtraBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-ExtraBoldItalic.woff");
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-SemiBold.woff");
+    src: url("/style/fonts/MonaspaceRadon-SemiBold.woff");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-SemiBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-SemiBoldItalic.woff");
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Medium.woff");
+    src: url("/style/fonts/MonaspaceRadon-Medium.woff");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-MediumItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-MediumItalic.woff");
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-Regular.woff");
+    src: url("/style/fonts/MonaspaceRadon-Regular.woff");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Radon";
-    src: url("fonts/MonaspaceRadon-RegularItalic.woff");
+    src: url("/style/fonts/MonaspaceRadon-RegularItalic.woff");
     font-weight: 400;
     font-style: italic;
 }

@@ -1,128 +1,128 @@
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Regular.woff");
+    src: url("/style/fonts/MonaspaceNeon-Regular.woff");
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Bold.woff");
+    src: url("/style/fonts/MonaspaceNeon-Bold.woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Italic.woff");
+    src: url("/style/fonts/MonaspaceNeon-Italic.woff");
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-BoldItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-BoldItalic.woff");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Light.woff");
+    src: url("/style/fonts/MonaspaceNeon-Light.woff");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-LightItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-LightItalic.woff");
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-ExtraLight.woff");
+    src: url("/style/fonts/MonaspaceNeon-ExtraLight.woff");
     font-weight: 200;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-ExtraLightItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-ExtraLightItalic.woff");
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Thin.woff");
+    src: url("/style/fonts/MonaspaceNeon-Thin.woff");
     font-weight: 100;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-ThinItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-ThinItalic.woff");
     font-weight: 100;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Black.woff");
+    src: url("/style/fonts/MonaspaceNeon-Black.woff");
     font-weight: 900;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-BlackItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-BlackItalic.woff");
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-ExtraBold.woff");
+    src: url("/style/fonts/MonaspaceNeon-ExtraBold.woff");
     font-weight: 800;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-ExtraBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-ExtraBoldItalic.woff");
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-SemiBold.woff");
+    src: url("/style/fonts/MonaspaceNeon-SemiBold.woff");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-SemiBoldItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-SemiBoldItalic.woff");
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Medium.woff");
+    src: url("/style/fonts/MonaspaceNeon-Medium.woff");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-MediumItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-MediumItalic.woff");
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-Regular.woff");
+    src: url("/style/fonts/MonaspaceNeon-Regular.woff");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Neon";
-    src: url("fonts/MonaspaceNeon-RegularItalic.woff");
+    src: url("/style/fonts/MonaspaceNeon-RegularItalic.woff");
     font-weight: 400;
     font-style: italic;
 }
