@@ -1,3 +1,5 @@
+@import url("/style/globals.css");
+
 .nav {
     width: calc(100vw - 16rem);
     height: 10vh;
@@ -26,7 +28,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+    background: linear-gradient(135deg, var(--purple), var(--red));
     transition: all .3s ease-in-out;
 }
 
@@ -45,7 +47,7 @@
     margin-right: auto;
     font-family: var(--krypton-font);
 
-    background: -webkit-linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+    background: -webkit-linear-gradient(135deg, var(--red), var(--purple));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
