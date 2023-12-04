@@ -1,0 +1,11 @@
+@import url("fonts.css");
+
+:root {
+    --black: #0a080a;
+    --black-transparent: rgba(10, 8, 10, 0.4);
+    --white: #E3E3E3;
+    --white-transparent: rgba(227, 227, 227, 0.3);
+
+    --red: #f00B51;
+    --purple: #7366FF;
+}

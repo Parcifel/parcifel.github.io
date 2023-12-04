@@ -3,472 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/quantify" rel="stylesheet">            
-    <link href="https://fonts.cdnfonts.com/css/coco-gothic" rel="stylesheet">
-    <link rel="stylesheet" href="style/Neon.Font.css">
-    <link rel="stylesheet" href="style/Krypton.Font.css">
-    <link rel="stylesheet" href="style/Argon.Font.css">
-    <link rel="stylesheet" href="style/Radon.Font.css">
-    <link rel="stylesheet" href="style/Xenon.Font.css">
-    <link rel="stylesheet" href="style/globals.css">
-                
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <script defer src="https://unpkg.com/swup@4"></script>
+    <title>Portfolio</title>
 </head>
 
 <style>
-
-    /*
-    COLORS:
-    Pink        - df00ff
-    Purple      - bf00ff
-    Blue/Purple - 8a00ff 
-    Gray        - 1c1c1c
-    Black       - 020102
-    */
-
-    @keyframes morph-x {
-        0% {
-            border-radius: 46% 54% 15% 85% / 28% 40% 60%  72%;
-        }
-        25% {
-            border-radius: 67% 33% 65% 35% / 75% 64% 36% 25% ;
-        }
-        50% {
-            border-radius: 48% 52% 48% 52% / 26% 70% 30% 74% ;
-        }
-        75% {
-            border-radius: 81% 19% 22% 78% / 28% 70% 30% 72% ;
-        }
-        100% {
-            border-radius: 46% 54% 15% 85% / 28% 40% 60%  72%;
-        }
-
+    :root {
+        --primary-red: #F00B51;
+        --primary-purple: #7366FF;
     }
 
-    @keyframes morph-n {
-        0% {
-            border-radius: 43% 57% 56% 44% / 39% 60% 40% 61% ;
-        }
-        25% {
-            border-radius: 54% 46% 43% 57% / 51% 48% 52% 49% ;
-        }
-        50% {
-            border-radius: 63% 37% 35% 65% / 69% 58% 42% 31% ;
-        }
-        75% {
-            border-radius: 70% 30% 45% 55% / 55% 43% 57% 45% ;
-        }
-        100% {
-            border-radius: 43% 57% 56% 44% / 39% 60% 40% 61% ;
-        }
-        
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(180deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
 
     html, body {
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         padding: 0;
         margin: 0;
     }
 
-
-
-    .background {
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-color: #020102;
-    }
-
-    .background::before {
-        content: "";
-        z-index: 0;
-        will-change: border-radius, transform;
-        display: block;
-        width: 100vh;
-        height: 100vh;
-        background: #df00ff;
-        position: fixed;
-        top: -30vh;
-        left: -15vw;
-        animation: morph-n 10s linear infinite alternate, spin 50s linear infinite reverse;
-        transform-origin: 50% 50%;
-    }
-
-    .background::after {
-        content: "";
-        z-index: 0;
-        will-change: border-radius, transform;
-        display: block;
-        width: 50vh;
-        height: 50vh;
-        background: #8a00ff;
-        position: fixed;
-        top: 10vh;
-        right: 15vw;
-        animation: morph-x 15s linear infinite alternate, spin 35s linear infinite reverse;
-        transform-origin: 25% 25%;
-    }
-
-    .blob::before {
-        content: "";
-        z-index: 0;
-        will-change: border-radius, transform;
-        display: block;
-        width: 40vh;
-        height: 40vh;
-        background: #8a00ff;
-        position: fixed;
-        bottom: 5vh;
-        left: 25vw;
-        animation: morph-n 20s linear infinite alternate, spin 30s linear infinite reverse;
-        transform-origin: 0 0;
-    }
-
-    .blob::after {
-        content: "";
-        z-index: 0;
-        will-change: border-radius, transform;
-        display: block;
-        width: 80vh;
-        height: 80vh;
-        background: #bf00ff;
-        position: fixed;
-        bottom: -20vh;
-        right: -5vw;
-        animation: morph-x 18s linear infinite alternate, spin 40s linear infinite reverse;
-        transform-origin: 35% 35%;
-    }
-
-    .screen {
-        width: 100%;
-        height: 100%;
-        z-index: 1;
+    .nav-container {
         position: fixed;
         top: 0;
         left: 0;
-
-        background-color: rgba(34, 32, 32, 0.1);
-        backdrop-filter: blur(30px);
+        width: 100vw;
+        height: 10vh;
+        z-index: 100;
     }
-
-    .card {
-        width: 900px;
-        height: max-content;
-        position: relative;
-        margin: 0 auto;
-        padding-left: 30px;
-        top: 75px;
-        z-index: 2;
-
-        border: 1px solid rgba(145, 143, 148, 0.6);
-        border-radius: 20px;
-        background-color: rgba(2, 1, 2, .55);
-        box-shadow: 0 0 10px 5px rgba(143, 141, 146, 0.3);
-
-        backdrop-filter: blur(10px);
-    }
-
-    .content {
-        width: calc(100%-60px);
-        position: relative;
-        display: grid;
-        grid-template-columns: 5fr 6fr;
-        padding: 30px;
-        padding-left: 60px;
-        align-items: center;
-
-        font-family: Argon;
-    }
-
-    .welcome {
-        grid-row: 1;
-        grid-column: 1/3;
-
-        padding-left: 0;
-
-        color: #fff;
-        font-size: 65px;
-        font-family: Neon;
-        font-weight: bold;
-        /*font-family: 'Quantify', sans-serif;*/
-    }
-
-    .welcome br {
-        display: none;
-    }
-
-
-    .header {
-        grid-row: 2;
-        grid-column: 1;
-
-        padding: 10px 0;
-
-        color: #fff;
-        font-size: 30px;
-
-    }
-
-    .info {
-        grid-row: 3;
-        grid-column: 1;
-
-        padding-left: 0;
-
-        color: #fff;
-        font-weight: 300;
-    }
-
-    .info p {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 20px;
-    }
-
-    .github {
-        grid-row: 4;
-        grid-column: 1;
-
-        height: max-content;
-        padding: 0;
-    }
-
-    .github .button {
-        display: flex;
-        width: 270px;
-        height: 50px;
-        
-        color: #fff;
-        font-size: 20px;
-        font-family: Neon;
-        font-weight: 500;
-        text-decoration: none;
-        align-items: center;
-
-        background-color: #00ca92;
-        border: 1px #013f2d;
-        border-radius: 5px;
-        box-shadow: 0 0 5px 2px rgba(143, 141, 146, 0.3);
-
-        flex-direction: row;
-    }
-
-    .github .button svg {
-        fill: #fff;
-        padding: 5px;
-        padding-left: 10px;
-        margin: 0;
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
-    }
-
-    .github .button span {
-        display: block;
-    }
-
-
-
-    .socials {
-        grid-row: 5;
-        grid-column: 1;
-
-        margin-left: auto;
-    }
-
-    .asset {
-        grid-column: 2;
-        grid-row: 2/6;
-        display: flex;
-
-    }
-
-    .asset img {
-        width: 100%;
-        height: 100%;
-        align-self: center;
-    }
-
-    .socials {
-        padding: 0;
-
-        display: flex;
-        flex-direction: row;
-
-        color: #fff;
-        font-size: 20px;
-    }
-
-    .socials a {
-        text-decoration: none;
-        display: block;
-        width: 40px;
-        height: 40px;
-    }
-
-    .socials a svg {
-        fill: #1c1c1c;
-        padding: 5px;
-        width: 35px;
-        height: 35px;
-    }
-
-    .socials .linkedin svg:hover {
-        fill: #0077b5;
-    }
-
-    .socials .instagram svg:hover {
-        fill: #d9407b;
-    }
-
-
-
-
-
-    @media only screen and (max-width: 1000px) {
-
-        .background::before {
-            width: 80vh;
-            height: 80vh;
-            top: -35vh;
-            left: -40vw;
-        }
-
-        .background::after {
-            width: 40vw;
-            height: 40vw;
-            right: -5vw;
-        }
-
-        .blob::before {
-            width: 30vw;
-            height: 30vw;
-            left: 5vw;
-            bottom: 10vh;
-            transform-origin: 30% 30%;
-        }
-
-        .blob::after {
-            width: 60vw;
-            height: 60vw;
-            right: -10vw;
-            bottom: -10vh;
-            transform-origin: 30% 30%;
-        }
-
-        .card {
-            width: 90%;
-            height: max-content;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content .welcome br {
-            display: block;
-        }
-
-        .content .header {
-            flex-wrap: wrap;
-            justify-content: center;
-            padding-bottom: 20px;
-        }
-
-        .content .header br {
-            display: none;
-        }
-
-        .content .asset {
-            display: none;
-        }
-
-        .content .socials {
-            padding-top: 50px;
-        }
-
-        .socials .linkedin svg {
-            fill: #0077b5;
-        }        
-
-        .socials .instagram svg {
-            fill: #d9407b;
-        }
-
-    }
-
-
 
 </style>
-<!-- ??==============================================?? -->
-<body>
-    <div class="background">
-        <div class="blob"></div>
-    </div>
-    <div class="screen">
-        <div class="card">
-            <div class="content">
-                <div class="welcome">
-                    Hello there,<br> I'm Pierre du Toit
-                </div>
-                <div class="header">
-                    This website is
-                    <br>
-                    coming soon ...
-                </div>
-                <div class="info">
-                    <p>
-                        This website is currently under construction. I am still working on my portfolio and this website that would act as my digital portfolio.
-                    </p>
-                    <p>
-                        You can go check out my github profile or my socials.
-                    </p>
-                </div>
-                <div class="github">
-                    <a href="https://github.com/Parcifel" class="button">
-                        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="github-asset octicon octicon-mark-github v-align-middle">
-                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                        </svg>
-                        <span>GitHub Profile</span>
-                    </a>
-                </div>
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/pierre-du-toit-09180b195" class="linkedin social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">    
-                            <path d="M 5 3 C 3.895 3 3 3.895 3 5 L 3 19 C 3 20.105 3.895 21 5 21 L 19 21 C 20.105 21 21 20.105 21 19 L 21 5 C 21 3.895 20.105 3 19 3 L 5 3 z M 5 5 L 19 5 L 19 19 L 5 19 L 5 5 z M 7.7792969 6.3164062 C 6.9222969 6.3164062 6.4082031 6.8315781 6.4082031 7.5175781 C 6.4082031 8.2035781 6.9223594 8.7167969 7.6933594 8.7167969 C 8.5503594 8.7167969 9.0644531 8.2035781 9.0644531 7.5175781 C 9.0644531 6.8315781 8.5502969 6.3164062 7.7792969 6.3164062 z M 6.4765625 10 L 6.4765625 17 L 9 17 L 9 10 L 6.4765625 10 z M 11.082031 10 L 11.082031 17 L 13.605469 17 L 13.605469 13.173828 C 13.605469 12.034828 14.418109 11.871094 14.662109 11.871094 C 14.906109 11.871094 15.558594 12.115828 15.558594 13.173828 L 15.558594 17 L 18 17 L 18 13.173828 C 18 10.976828 17.023734 10 15.802734 10 C 14.581734 10 13.930469 10.406562 13.605469 10.976562 L 13.605469 10 L 11.082031 10 z"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/pierrecifel09?igshid=MzNlNGNkZWQ4Mg==" class="instagram social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">    
-                            <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"/>
-                        </svg>
-                    </a>
-                    <!-- <div class="email"></div> -->
 
+<body>
+    
+    <div class="nav-container"></div>
+
+    <main id="swup" class="transition-fade">
+        <div class="hero-container">
+            <div class="content-container">
+                <div class="greeting">
+                    <h1>Hello there ...</h1>
                 </div>
-                <div class="asset">
-                    <img src="static/construction.svg" alt="website_under_construction.svg">
+                <div class="title">
+                    <h1></h1>
+                </div>
+                <div class="summary">
+                    <p>
+                        I'm currently a student at the Stellenbosch University
+                        studying towards a BSc in Computer Science.
+                    </p>
+                    <p>
+                        I'm a passionate developer and I love to learn new things.
+                    </p>
+                    <div class="read-more">
+                        <p>Read More</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="image-container">
+                <div class="main-headshot"></div>
+            </div>
         </div>
-    </div>
+    </main>
 
 </body>
-<!-- ??==============================================?? -->
+
+<script src="static/includeHTML.js"></script>
+<script defer src="static/nav.js"></script>
 <script>
+    console.log("Hello Script!");
+
+    /* Navigation */
+    let nav_container = document.querySelector(".nav-container");
+    let nav_file = "./components/nav.html";
+    includeHTML(nav_container, nav_file);
+
+    let read_more = document.querySelector(".read-more");
+
+
+    read_more.addEventListener("click", () => {
+        window.location.href = "about.html";
+    });
+
+    /* Type Writer Effect */
+    async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function typeWriter(element, text, speed) {
+        let i = 0;
+        while (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+
+            if (speed != null) {
+                await sleep(speed);
+            } else {
+                await sleep(Math.floor(Math.random() * 100) + 100);
+            
+            }
+        }
+    }
+
+    let greeting = document.querySelector(".title h1");
+    let text = "I Am Pierre du Toit";
+
+    typeWriter(greeting, text, null);
+
+
+
 </script>
 
 </html>

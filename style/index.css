@@ -1,0 +1,146 @@
+@import url("globals.css");
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes cursor_blink {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.hero-container {
+    width: calc(100vw - 24rem);
+    height: 95vh;
+
+    padding: 0 12rem;
+
+    background-color: var(--black);
+}
+
+.hero-container .content-container {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: max-content;
+    max-width: 60%;
+    height: 100%;
+}
+
+.hero-container .content-container h1 {
+    margin: 0.5rem 0;
+}
+
+.hero-container .content-container .greeting h1 {
+    font-family: var(--krypton-font);
+
+    background: -webkit-linear-gradient(45deg, var(--purple), var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-container .content-container .title h1 {
+    font-family: var(--neon-font);
+    color: var(--white);
+    font-size: 3rem;
+
+    width: max-content;
+}
+
+.hero-container .content-container .title h1::after {
+    content: "";
+    display: block;
+
+    position: relative;
+    left: 100%;
+    top: -0.5rem;
+
+    width: 1.9rem;
+    height: 5px;
+
+    background: linear-gradient(45deg, var(--purple), var(--red));
+
+    animation: cursor_blink 1s infinite;
+}
+
+.hero-container .content-container .summary {
+    width: 80%;
+    padding: 1.5rem;
+
+    z-index: 1;
+    border-radius: 5px;
+
+    background-color: var(--white-transparent);
+}
+
+.hero-container .content-container .summary p {
+    margin: 0.5rem 0;
+
+    font-family: var(--neon-font);
+    text-wrap: auto;
+    color: var(--white);
+}
+
+.hero-container .content-container .summary .read-more p {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-container .content-container .summary .read-more {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    width: max-content;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-family: var(--neon-font);
+    color: var(--white);
+
+    background: linear-gradient(45deg, var(--purple), var(--red));
+}
+
+.hero-container .image-container {
+    position: absolute;
+    right: 15rem;
+    top: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 85%;
+}
+
+.hero-container .image-container .main-headshot {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-transparent);
+}
+
+

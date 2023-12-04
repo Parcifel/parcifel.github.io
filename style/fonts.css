@@ -5,13 +5,6 @@
 @import url("Krypton.Font.css");
 
 :root {
-    --pink: #df00ff;
-    --purple: #bf00ff;
-    --blue-purple: #8a00ff;
-    --gray: #1c1c1c;
-    --black: #020102;
-
-
     --neon-font: Neon;
     --neon-cl1: #FF9482;
     --neon-cl2: #7D77FF;
