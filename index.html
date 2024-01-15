@@ -4,110 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/index.css">
-    <link rel="stylesheet" href="/style/nav.css">
-    <script defer src="https://unpkg.com/swup@4"></script>
-    <title>Portfolio</title>
+    <script src="/static/redirect.js"></script>
+    <title>Home</title>
 </head>
-
-<style>
-
-    html, body {
-        width: 100vw;
-        height: 100vh;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 10vh;
-        z-index: 100;
-    }
-
-</style>
-
 <body>
-    
-    <div class="nav-container"></div>
+    <nav class="nav-container">
+        <div class="nav-alias">
+            <h1>Parcifel</h1>
+        </div>
 
-    <main id="swup" class="transition-fade">
-        <div class="hero-container">
-            <div class="content-container">
-                <div class="greeting">
-                    <h1>Hello there ...</h1>
-                </div>
-                <div class="title">
-                    <h1></h1>
-                </div>
-                <div class="summary">
-                    <p>
-                        I'm currently a student at the Stellenbosch University
-                        studying towards a BSc in Computer Science.
-                    </p>
-                    <p>
-                        I'm a passionate developer and I love to learn new things.
-                    </p>
-                    <div class="read-more">
-                        <p>Read More</p>
-                    </div>
-                </div>
+        <div class="nav-links">
+            <a class="link active" href="#hero">Home</a>
+            <a class="link" href="/about.html">About</a>
+            <a class="link" href="#hightlights">Portfolio</a>
+            <a class="link" href="#contact">Contact Me</a>
+        </div>  
+    </nav>
+
+    <div class="container hero-container" id="hero">
+        <div class="hero-content">
+            <div class="greeting">
+                <h1>Hello there ...</h1>    
             </div>
-
-            <div class="image-container">
-                <div class="main-headshot"></div>
+            <div class="name">
+                <h1 class="name-content"></h1>
+            </div>
+            <div class="summary">
+                <p>
+                    I am currently studying <mark>BSc Computer Science</mark> 
+                    at Stellenbosch University with a focus on 
+                    <mark>Machine Learning</mark> and <mark>Software Engineering</mark>.
+                </p>
+                <p>
+                    I am a passionate software developer  and I 
+                    love learning new things. I also like to design
+                    new and clever algorithms to solve software related
+                    problems.
+                </p>
+                <div class="hero-action">
+                    Learn More
+                </div>
             </div>
         </div>
-    </main>
+        <div class="hero-headshot">
 
+        </div>
+    </div>
+
+    <div class="container experience-container" id="experience">
+        <div class="experience-header">
+            <h1>Experience</h1>
+        </div>
+        <div class="experience-cards">
+            <div class="experience-card">
+                <h2>Frontend</h2>
+                <div class="card-items">
+                    <h3>React</h3>
+                    <h3>React Native</h3>
+                    <h3>HTML/CSS</h3>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="blob"></div>
+                <div class="fakeblob"></div>
+            </div>
+            <div class="experience-card">
+                <h2>Backend</h2>
+                <div class="card-items">
+                    <h3>Django</h3>
+                    <h3>Express.js</h3>
+                    <h3>Flask</h3>
+                </div>
+                <div class="blob"></div>
+                <div class="fakeblob"></div>
+            </div>
+            <div class="experience-card">
+                <h2>Extras</h2>
+                <div class="card-items">
+                    <h3>Python</h3>
+                    <h3>C/C++</h3>
+                    <h3>Pascal</h3>
+                    <h3>Java</h3>
+                    <h3>SQL</h3>
+                </div>
+                <div class="blob"></div>
+                <div class="fakeblob"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container highlights-container" id="hightlights">
+        Highlights Section
+    </div>
+
+    <div class="container action-container" id="contact" style="color: white;">
+        Call to Action
+    </div>
+
+    <footer> 
+        Footer
+    </footer>
 </body>
 
-<script src="/static/includeHTML.js"></script>
-<script defer src="/static/nav.js"></script>
 <script>
-    console.log("Hello Script!");
-
-    /* Navigation */
-    let nav_container = document.querySelector(".nav-container");
-    let nav_file = "/components/nav.html";
-    includeHTML(nav_container, nav_file);
-
-    let read_more = document.querySelector(".read-more");
-
-
-    read_more.addEventListener("click", () => {
-        window.location.href = "about.html";
-    });
-
-    /* Type Writer Effect */
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    let dev = true;
+
+    if (dev) {
+        redirect("/underConstruction.html");
+    }
+
+
+    /*let btn = document.querySelector(".btn");
+    btn.addEventListener("click", (e) => {
+        transformNav();
+    })*/
+
+    /* NAVIGATION BAR*/
+    let nav_bar = document.querySelector(".nav-container");
+
+    /* Scroll Animation (Shrink/Grow) */
+    window.addEventListener("scroll", (e) => {
+        let vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) / 100;
+
+        if (window.scrollY > 60*vh) {
+            if (! nav_bar.classList.contains("shrinked")) {
+                shrinkNav();
+            }
+        } else {
+            if (nav_bar.classList.contains("shrinked")) {
+                expandNav();
+            }
+        }
+    })
+
+    async function shrinkNav() {
+        nav_bar.classList.add("shrinked");
+
+        let nav_links = document.querySelector(".nav-links");
+        nav_links.style.width = "50%";
+
+        await sleep(100);
+
+        let nav_alias = document.querySelector(".nav-alias");
+        nav_alias.style.width = "max-content";
+        nav_alias.style.opacity = "1";
+    }
+
+    async function expandNav() {
+        nav_bar.classList.remove("shrinked");
+
+        let nav_alias = document.querySelector(".nav-alias");
+        nav_alias.style.opacity = "0";
+
+        await sleep(100);
+
+        let nav_links = document.querySelector(".nav-links");
+        nav_links.style.width = "100%";
+
+        await sleep(200);
+        nav_alias.style.width = "0";
+    }
+
+    /* Link activation */
+    let links = document.querySelectorAll(".link");
+
+    links.forEach( (link) => {
+        link.addEventListener("click", () => {
+            links.forEach( (l) => {
+                if (link === l) {
+                    l.classList.add("active");
+                } else {
+                    l.classList.remove("active");
+                }
+            })
+        })
+    })
+
+    /* HERO SECTION */
+    
+    /* Type Writer effect */
+    let name_content = document.querySelector(".name-content");
+    let name_text = "I am Pierre du Toit"
+    
+    typeWriter(name_content, name_text, null);
+
     async function typeWriter(element, text, speed) {
         let i = 0;
         while (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            let char = text.charAt(i);
+            let inner_text = element.innerHTML + char;
+            element.innerHTML = inner_text;
             i++;
-
+    
             if (speed != null) {
                 await sleep(speed);
             } else {
-                await sleep(Math.floor(Math.random() * 100) + 100);
+                await sleep(Math.floor(Math.random() * 100) + 200);
             
             }
         }
     }
 
-    let greeting = document.querySelector(".title h1");
-    let text = "I Am Pierre du Toit";
+    /* Experience Card Hover */
+    let experience_cards = document.querySelectorAll(".experience-card");
+    console.log(experience_cards);
 
-    typeWriter(greeting, text, null);
+    window.addEventListener("mousemove", (e) => {
+        experience_cards.forEach((card) => {
+            let blob = card.querySelector(".blob");
+            let fakeblob = card.querySelector(".fakeblob");
+            let rec = fakeblob.getBoundingClientRect();
+            blob.style.opacity = "1";
 
-
-
+            blob.animate (
+                [
+                    {
+                        transform: `translate(${(e.clientX - rec.left) - (rec.width /2)}px, ${(e.clientY - rec.top) - (rec.height /2)}px)`
+                    }
+                ],
+                {
+                    diration: 300,
+                    fill: "forwards"
+                }
+            );
+        });
+    })
 </script>
 
 </html>

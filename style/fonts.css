@@ -1,8 +1,8 @@
-@import url("/style/Argon.Font.css");
-@import url("/style/Neon.Font.css");
-@import url("/style/Xenon.Font.css");
-@import url("/style/Radon.Font.css");
-@import url("/style/Krypton.Font.css");
+@import url("/style/fonts/Argon.Font.css");
+@import url("/style/fonts/Neon.Font.css");
+@import url("/style/fonts/Xenon.Font.css");
+@import url("/style/fonts/Radon.Font.css");
+@import url("/style/fonts/Krypton.Font.css");
 
 :root {
     --neon-font: Neon;

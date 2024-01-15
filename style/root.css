@@ -1,0 +1,53 @@
+@import url("/style/fonts.css");
+
+:root {
+    --secondary-color: #f00B51;
+
+    /* Primary Colors (or #8956f1) */
+    --primary-color: hsl(266, 88%, 62%);
+    --primary-color-transparent: hsla(266, 88%, 62%, 0.3);
+    
+    --primary-tint: hsl(266, 90%, 72%);
+    --primary-light: hsl(266, 98%, 82%);
+    --primary-lighter: hsl(266, 98%, 88%);
+
+    --primary-shade: hsl(266, 81%, 42%);
+    --primary-dark: hsl(266, 81%, 32%);
+    --primary-darker: hsl(266, 81%, 22%);
+
+    --primary-black: hsl(266, 20%, 8%);
+    --primary-black-transparent: hsla(266, 20%, 8%, 0.6);
+    --primary-black-transparent-less: hsla(266, 20%, 8%, 0.3);
+    --primary-white: hsl(266, 20%, 98%);
+    --primary-white-transparent: hsla(266, 20%, 98%, 0.6);
+    --primary-white-transparent-less: hsla(266, 20%, 98%, 0.3);
+
+    --primary-gray: hsl(266, 10%, 50%);
+    --primary-light-gray: hsl(266, 10%, 70%);
+    --primary-dark-gray: hsl(266, 10%, 30%);
+    /* == == == == == */
+
+    --font-white: var(--primary-white);
+    --font-black: var(--primary-black);
+
+    --webkit-linear-gradient: -webkit-linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    --linear-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    :root {
+        --page-background: var(--primary-light-gray);
+
+        --font-gray: var(--primary-dark-gray);
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-background: var(--primary-black);
+
+        --font-gray: var(--primary-gray);
+    }
+}

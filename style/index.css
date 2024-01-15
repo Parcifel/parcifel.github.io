@@ -1,8 +1,4 @@
-@import url("/style/globals.css");
-
-::-webkit-scrollbar {
-    display: none;
-}
+@import url("/style/root.css");
 
 @keyframes cursor_blink {
     0% {
@@ -25,52 +21,155 @@
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--page-background);
+}
+
+.nav-container {
+    width: 80vw;
+    height: 5vh;
+    padding: 0.8rem;
+    margin: 0 10vw;
+    margin-top: 2vh;
+
+    background-color: var(--primary-black-transparent);
+    border-radius: 5px;
+
+    position: fixed;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-alias {
+    width: 0;
+    margin-right: auto;
+    margin-left: 1rem;
+
+    opacity: 0;
+    background: var(--webkit-linear-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: var(--krypton-font);
+
+    transition: all 1s ease;
+}
+
+.nav-links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-left: auto;
+
+    transition: all 1.5s ease;
+}
+
+.nav-links .link {
+    margin: 0 2rem;
+
+    color: var(--font-white);
+    cursor: pointer;
+
+    font-family: var(--neon-font);
+    text-decoration: none;
+}
+
+.nav-links .link::after {
+    content: "";
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--linear-gradient);
+    transition: all .3s ease-in-out;
+}
+
+
+.nav-links .link.active::after {
+    left: 0;
+    width: 100%;
+}
+
+.nav-links .link:hover::after {
+    left: 0;
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+
+
+.container {
+    width: 100vw;
+}
 
 .hero-container {
     width: calc(100vw - 24rem);
-    height: 95vh;
-
+    height: 90vh;
     padding: 0 12rem;
-
-    background-color: var(--black);
 }
 
-.hero-container .content-container {
+.hero-content {
+    width: max-content;
+    max-width: 60%;
+    height: 100%;
+
     position: relative;
     left: 0;
     top: 0;
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    width: max-content;
-    max-width: 60%;
-    height: 100%;
 }
 
-.hero-container .content-container h1 {
+.hero-content h1 {
     margin: 0.5rem 0;
 }
 
-.hero-container .content-container .greeting h1 {
+.greeting h1 {
+    width: max-content;
+
     font-family: var(--krypton-font);
 
-    background: -webkit-linear-gradient(45deg, var(--purple), var(--red));
+    background: var(--webkit-linear-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-container .content-container .title h1 {
-    font-family: var(--neon-font);
-    color: var(--white);
-    font-size: 3rem;
-
+.name h1 {
     width: max-content;
+
+    font-family: var(--neon-font);
+    font-size: 3rem;
+    color: var(--font-white);
 }
 
-.hero-container .content-container .title h1::after {
+.name h1::after {
     content: "";
     display: block;
 
@@ -81,66 +180,145 @@
     width: 1.9rem;
     height: 5px;
 
-    background: linear-gradient(45deg, var(--purple), var(--red));
+    background: var(--linear-gradient);
 
     animation: cursor_blink 1s infinite;
 }
 
-.hero-container .content-container .summary {
+.summary {
     width: 80%;
     padding: 1.5rem;
 
-    z-index: 1;
     border-radius: 5px;
 
-    background-color: var(--white-transparent);
+    background-color: var(--primary-white-transparent-less);
 }
 
-.hero-container .content-container .summary p {
+.summary p {
     margin: 0.5rem 0;
 
     font-family: var(--neon-font);
     text-wrap: auto;
-    color: var(--white);
+    color: var(--font-white);
 }
 
-.hero-container .content-container .summary .read-more p {
-    position: relative;
-    z-index: 1;
+.summary p mark {
+    font-family: var(--krypton-font);
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    color: var(--primary-light-gray);
+    background-color: transparent;
 }
 
-.hero-container .content-container .summary .read-more {
+.summary p mark:hover {
+    background: var(--webkit-linear-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.summary .hero-action {
+    width: max-content;
     margin: 1rem 0;
     padding: 0.5rem 1rem;
-    width: max-content;
+
+    position: relative;
+    z-index: 3;
 
     border-radius: 5px;
-
     cursor: pointer;
 
     font-family: var(--neon-font);
-    color: var(--white);
+    color: var(--font-white);
 
-    background: linear-gradient(45deg, var(--purple), var(--red));
+    background: var(--linear-gradient);
 }
 
-.hero-container .image-container {
-    position: absolute;
-    right: 15rem;
-    top: 10%;
+
+.experience-container {
+    width: calc(100vw - 24rem);
+    height: max-content;
+    padding: 0 12rem;
+    padding-bottom: 7rem;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 
-    width: 40%;
-    height: 85%;
+    background-color: var(--primary-gray);
 }
 
-.hero-container .image-container .main-headshot {
+.experience-header {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.experience-cards {
     width: 100%;
-    height: 100%;
-    background-color: var(--white-transparent);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+}
+
+.experience-card .blob {
+    filter: blur(50px);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgb(0, 255, 0, 0.5);
+    transition: all 300ms ease-in-out;
+}
+
+.experience-card:nth-child(1) .blob {
+    background-color: var(--primary-color-transparent);
+}
+.experience-card:nth-child(2) .blob {
+    background-color: rgb(0, 255, 0, 0.5);
+}
+.experience-card:nth-child(3) .blob {
+    background-color: rgb(0, 0, 255, 0.5);
+}
+
+.experience-card .fakeblob {
+    display: hidden;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.experience-card {
+    width: 20%;
+    overflow: hidden;
+    margin: 0;
+    background: var(--primary-black-transparent);
+    border-radius: 10px;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    backdrop-filter: blur(10px);
 }
 
 
+
+
+.highlights-container {
+    height: 75vh;
+    background-color: aqua;
+}
+
+.action-container {
+    height: 75vh;
+    background-color: blueviolet;
+}
