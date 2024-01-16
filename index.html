@@ -51,8 +51,44 @@
         </div>
     </div>
 
-    <div class="container experience-container" id="experience">
-        <div class="experience-header">
+    <div class="experience-container flow">
+        <h1 class="experience-header">Experience</h1>
+
+        <div class="experience-cards cards">
+            <div class="cards-inner">
+                <div class="cards-card card">
+                    <h2 class="card-header">Header</h2>
+                    <ul class="card-items flow" role="list">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                    </ul>
+                </div>
+
+                <div class="cards-card card">
+                    <h2 class="card-header">Header</h2>
+                    <ul class="card-items flow" role="list">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                    </ul>
+                </div>
+
+                <div class="cards-card card">
+                    <h2 class="card-header">Header</h2>
+                    <ul class="card-items flow" role="list">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="overlay cards-inner"></div>
+        </div>
+    </div>
+
+        <!-- <div class="experience-header">
             <h1>Experience</h1>
         </div>
         <div class="experience-cards">
@@ -89,8 +125,7 @@
                 <div class="blob"></div>
                 <div class="fakeblob"></div>
             </div>
-        </div>
-    </div>
+        </div> -->
 
     <div class="container highlights-container" id="hightlights">
         Highlights Section
@@ -110,7 +145,7 @@
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    let dev = true;
+    let dev = false;
 
     if (dev) {
         redirect("/underConstruction.html");
@@ -209,7 +244,7 @@
     }
 
     /* Experience Card Hover */
-    let experience_cards = document.querySelectorAll(".experience-card");
+    /*let experience_cards = document.querySelectorAll(".experience-card");
     console.log(experience_cards);
 
     window.addEventListener("mousemove", (e) => {
@@ -231,7 +266,80 @@
                 }
             );
         });
-    })
+    })*/
+/*
+    const cards_container = document.querySelector(".cards");
+    const cards_containre_inner = document.querySelector(".expereince-cards");
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const overlay = document.querySelector(".overlay");
+
+    const applyOverlayMask = (e) => {
+        const overlayEl = e.currentTarget;
+        const x = e.pageX - cards_container.offsetLeft;
+        const y = e.pageY - cards_container.offsetTop;
+
+        overlayEl.style = `--opacity: 1; --maskX: ${x}px; --maskY: ${y}px`;
+    };
+
+    const createOverlayCta = (overlay_card, ctaEl) => {
+        
+    };
+
+    const observer = new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
+            const card_intex = cards.indexOf(entry.target); 
+            let width = entry.borderBoxSize[0].inlineSize;
+            let height = entry.borderBoxSize[0].blockSize;
+
+            if (card_index >= 0) {
+                overlay.children[card_index].style.width = `${width}px`;
+                overlay.children[card_index].style.height = `${height}px`;
+            }
+        });
+    });
+
+    const isitOverlayCard = (cardEl) => {
+        const overlay_card = docuemnt.creaateElement("div");
+        overlay_card.classList.add("card");
+        overlay.append(overlay_card);
+        observer.observe(cardEl);
+    };
+
+    cards.forEach(initOverlayCard);
+    document.body.addEventListener("pointermove", applyOverlayMask);
+*/
+
+console.clear();
+const cardsContainer = document.querySelector(".cards");
+const cardsContainerInner = document.querySelector(".cards-inner");
+const cards = Array.from(document.querySelectorAll(".card"));
+const overlay = document.querySelector(".overlay");
+const applyOverlayMask = (e) => {
+  const overlayEl = e.currentTarget;
+  const x = e.pageX - cardsContainer.offsetLeft;
+  const y = e.pageY - cardsContainer.offsetTop;
+  overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
+};
+const observer = new ResizeObserver((entries) => {
+  entries.forEach((entry) => {
+    const cardIndex = cards.indexOf(entry.target);
+    let width = entry.borderBoxSize[0].inlineSize;
+    let height = entry.borderBoxSize[0].blockSize;
+    if (cardIndex >= 0) {
+      overlay.children[cardIndex].style.width = `${width}px`;
+      overlay.children[cardIndex].style.height = `${height}px`;
+    }
+  });
+});
+const initOverlayCard = (cardEl) => {
+  const overlayCard = document.createElement("div");
+  overlayCard.classList.add("card");
+  overlay.append(overlayCard);
+  observer.observe(cardEl);
+};
+cards.forEach(initOverlayCard);
+document.body.addEventListener("pointermove", applyOverlayMask);
+
 </script>
 
 </html>

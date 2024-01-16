@@ -235,6 +235,101 @@ body {
     background: var(--linear-gradient);
 }
 
+.experience-container  *, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.experience-container {
+    max-width: 75rem;
+    padding: 3em 1.5em;
+  }
+  .experience-header {
+    font-weight: 600;
+    font-size: 2.25em;
+    margin-bottom: 0.75em;
+    text-align: center;
+    color: #eceff1;
+  }
+  .cards {
+    position: relative;
+  }
+  .cards-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+  }
+  .card {
+    --flow-space: 0.5em;
+    --hue: var(--primary-color-hue);
+    --saturation: var(--primary-color-saturation);
+    --lightness: var(--primary-color-lightness);
+    --hsl: var(--hue), var(--saturation), var(--lightness);
+    flex: 1 1 14rem;
+    padding: 1.5em 2em;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: start;
+    gap: 1.25em;
+    color: #eceff1;
+    background-color: #2b2b2b;
+    border: 1px solid #eceff133;
+    border-radius: 15px;
+  }
+  .card-items {
+    line-height: 1.4;
+  }
+  .card-items li::before {
+    display: inline-block;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+    transform: translatey(0.25ch);
+    margin-right: 1ch;
+  }
+  .card-header {
+    font-size: 1.05em;
+    font-weight: 600;
+  }
+  .flow > * + * {
+    margin-top: var(--flow-space, 1.25em);
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    opacity: var(--opacity, 0);
+    -webkit-mask: radial-gradient(
+      25rem 25rem at var(--x) var(--y),
+      #000 1%,
+      transparent 50%
+    );
+    mask: radial-gradient(
+      25rem 25rem at var(--x) var(--y),
+      #000 1%,
+      transparent 50%
+    );
+    transition: 400ms mask ease;
+    will-change: mask;
+  }
+  .overlay .card {
+    background-color: hsla(var(--hsl), 0.15);
+    border-color: hsla(var(--hsl), 1);
+    box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+  }
+  :not(.overlay) > .card {
+    transition: 400ms background ease;
+    will-change: background;
+  }
+  :not(.overlay) > .card:hover {
+    --lightness: 95%;
+    background: hsla(var(--hsl), 0.1);
+  }
+
+/* .card ul {
+    list-style: none;
+    padding: 0;
+}
 
 .experience-container {
     width: calc(100vw - 24rem);
@@ -249,12 +344,95 @@ body {
     background-color: var(--primary-gray);
 }
 
-.experience-header {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+.experience-container * {
+    box-sizing: border-box;
 }
 
-.experience-cards {
+.experience-header {
+    font-weight: 600;
+    font-size: 2.25em;
+    font-family: var(--neon-font);
+    margin-bottom: 0.75em;
+    text-align: center;
+    color: var(--font-white);
+}
+
+.cards {
+    position: relative;
+}
+
+.card {
+    --flow-space: 0.5em;
+    --hsl: var(--primary-color-hsl);
+    flex: 1 1 14rem;
+    padding: 1.5em 2em;
+    display: glid;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: start;
+    gap: 1.25em;
+    color: #eceff1;
+    background-color: #2b2b2b;
+    border: 1px solid #eceff133;
+    border-radius: 15px;
+}
+
+.experience-card .card-items {
+    line-height: 1.4;
+}
+
+.experience-card .card-items li::before {
+    display: inline-block;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+    transform: translateY(0.25ch);
+    margin-right: 1ch;
+}
+
+.experience-card .card-header {
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1.25em);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: noen;
+    opacity: var(--opacity, 0);
+    mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+    );
+    -webkit-mask: radial-gradient(
+        25rem 25rem at var(--x) var(--y),
+        #000 1%,
+        transparent 50%
+    );
+    transition: 400ms mask ease;
+    will-change: mask;
+}
+
+.overlay .card {
+    background-color: hsla(var(--hsl), 0.15);
+    border-color: hsla(var(--hsl), 1);
+    box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+:not(.overlay) > .card {
+    transition: 400ms background ease;
+    will-change: background;
+}
+
+:not(.overlay) > .card:hover {
+    --lightness: 95%;
+    background: hsla(var(--hsl), 0.1);
+} */
+
+/* .experience-cards {
     width: 100%;
 
     display: flex;
@@ -308,7 +486,7 @@ body {
     position: relative;
     transition: all 300ms ease-in-out;
     backdrop-filter: blur(10px);
-}
+} */
 
 
 

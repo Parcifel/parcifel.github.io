@@ -5,6 +5,9 @@
 
     /* Primary Colors (or #8956f1) */
     --primary-color: hsl(266, 88%, 62%);
+    --primary-color-hue: 266;
+    --primary-color-saturation: 88%;
+    --primary-color-lightness: 62%;
     --primary-color-transparent: hsla(266, 88%, 62%, 0.3);
     
     --primary-tint: hsl(266, 90%, 72%);
