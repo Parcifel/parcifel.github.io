@@ -28,6 +28,8 @@
     --primary-gray: hsl(266, 10%, 50%);
     --primary-light-gray: hsl(266, 10%, 70%);
     --primary-dark-gray: hsl(266, 10%, 30%);
+    --primary-light-gray-transparent: rgba(177, 171, 186, 0.5); /* #4b4554 */
+    --primary-dark-gray-transparent: rgba(75, 69, 84, 0.5); /* #4b4554 */
     /* == == == == == */
 
     --font-white: var(--primary-white);
@@ -35,6 +37,18 @@
 
     --webkit-linear-gradient: -webkit-linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     --linear-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+    --greeting-size: 2.5rem;
+    --title-size: 3.5rem;
+    --section-header-size: 2.5rem;
+    --section-subheader-size: 1.5rem;
+    --header-size: 1.5rem;
+    --paragraph-size: 1rem;
+    --small-size: 1.25rem;
+    --medium-size: 2rem;
+    --large-size: 3rem;
+    --underline-weight: 0.2rem;
+    --cursor-height: 0.5rem;
 }
 
 /* Light Mode */
