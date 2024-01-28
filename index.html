@@ -60,6 +60,14 @@
         <div class="hero-headshot">
             <canvas class="hero-canvas"></canvas>
             <script type="module">
+                var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+                window.onresize = function(event) {
+                    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                    viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                };
+
                 import * as THREE from 'three';
                 import { TrackballControls } from 'three/trackballcontrols';
                 import { GLTFLoader } from 'three/gltfloader';
@@ -69,7 +77,7 @@
                 let canvasHeight = canvas.clientHeight;
 
                 let scene = new THREE.Scene();
-                let camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.6, 1200);
+                let camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1200);
                 let renderer = new THREE.WebGLRenderer({
                     antialias: true, 
                     canvas: canvas
@@ -77,8 +85,8 @@
                 let loader = new GLTFLoader();
 
                 camera.position.x = 0;
-                camera.position.y = 1.2;
-                camera.position.z = 1.5;
+                camera.position.y = 1.5;
+                camera.position.z = 1;
 
                 renderer.setClearColor(0x000000, 0);
                 renderer.setSize(canvasWidth, canvasHeight);
@@ -95,19 +103,63 @@
                     }
                 );
 
-                let light = new THREE.PointLight(0x404040, 100);
-                light.position.set(0.5, 1.3, 1.5);
-                scene.add(light);
+                let frontalLight = new THREE.PointLight(0x404040, 100);
+                frontalLight.position.set(0.5, 1.5, 1.5);
+                scene.add(frontalLight);
 
-                scene.rotation.x = 0.2;
+                let backLight1 = new THREE.PointLight(0x404040, 50);
+                let backLight2 = new THREE.PointLight(0x404040, 50);
+                backLight1.position.set(-0.25, 2, -1.5);
+                backLight2.position.set(-0.5, 1.3, 0.5);
+                scene.add(backLight1);
+                scene.add(backLight2);
 
                 const rendering = () => {
                     requestAnimationFrame(rendering);
-                    scene.rotation.y -= 0.001;
                     renderer.render(scene, camera);
                 }
 
                 rendering();
+
+
+                console.log(canvas);
+                console.log(canvas.getBoundingClientRect().top);
+                console.log(canvas.getBoundingClientRect().left);
+
+                let hero_container = document.querySelector(".hero-container");
+                window.addEventListener("mousemove", (e) => {
+                    let canvasTop = canvas.getBoundingClientRect().top;
+                    let canvasLeft = canvas.getBoundingClientRect().left;
+                    let canvasCenter = {
+                        x: canvasLeft + (canvasWidth / 2),
+                        y: canvasTop + (canvasHeight / 2)
+                    }
+                    let mousePos = {
+                        x: e.clientX,
+                        y: e.clientY
+                    }
+
+                    let heroContainerRect = hero_container.getBoundingClientRect();
+                    if (mousePos.y < heroContainerRect.top || mousePos.y > heroContainerRect.bottom) {
+                        return;
+                    } else if (mousePos.x < heroContainerRect.left || mousePos.x > heroContainerRect.right) {
+                        return;
+                    }
+
+
+                    let mousePosRel = {
+                        x: mousePos.x - canvasCenter.x,
+                        y: mousePos.y - canvasCenter.y
+                    }
+
+                    let rotationRation = Math.max(viewportHeight, viewportWidth) * 4.5;
+
+                    let xRotation = (mousePosRel.y / rotationRation) + 0.2;
+                    let yRotation = (mousePosRel.x / rotationRation) - 0.3;
+
+                    scene.rotation.x = xRotation;
+                    scene.rotation.y = yRotation;
+                })
 
             </script>
         </div>
