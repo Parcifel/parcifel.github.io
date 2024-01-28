@@ -134,6 +134,10 @@ body {
     width: calc(100vw - 24rem);
     height: 90vh;
     padding: 0 12rem;
+    overflow: visible;
+
+    display: flex;
+    flex-direction: row;
 }
 
 .hero-content {
@@ -244,6 +248,25 @@ body {
     background: var(--linear-gradient);
 }
 
+.hero-headshot {
+    width: 50vw;
+    height: 100%;
+
+    position: absolute;
+    right: 0vw;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-headshot canvas {
+    width: 80%;
+    height: 80%;
+}
+
 .experience-container  *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -305,6 +328,7 @@ body {
     background-color: var(--primary-dark-gray);
     border: 1px solid var(--primary-light-gray-transparent);
     border-radius: 15px;
+    z-index: 2;
 }
 
 .card-items {
@@ -341,21 +365,22 @@ body {
     user-select: none;
     opacity: var(--opacity, 0);
     -webkit-mask: radial-gradient(
-        25rem 25rem at var(--x) var(--y),
+        30rem 30rem at var(--x) var(--y),
         #000 1%,
-        transparent 50%
+        transparent 40%
     );
     mask: radial-gradient(
-        25rem 25rem at var(--x) var(--y),
+        30rem 30rem at var(--x) var(--y),
         #000 1%,
-        transparent 50%
+        transparent 40%
     );
     transition: 400ms mask ease;
     will-change: mask;
+    z-index: 1;
 }
 
 .overlay .card {
-    background-color: hsla(var(--hsl), 0.3);
+    background-color: hsla(var(--hsl), 0.5);
     border-color: hsla(var(--hsl), 1);
     box-shadow: 0 0 0 1px inset hsl(var(--hsl));
 }
@@ -367,6 +392,9 @@ body {
 :not(.overlay) > .card:hover {
     --lightness: 80%;
     background: hsla(var(--hsl), 0.1);
+    border: none;
+    box-shadow: 1px 1px 5px var(--primary-white-transparent-less),
+        -1px -1px 5px var(--primary-white-transparent-less);
 }
 
 /* .card ul {

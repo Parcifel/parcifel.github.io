@@ -18,9 +18,9 @@
     --primary-dark: hsl(266, 81%, 32%);
     --primary-darker: hsl(266, 81%, 22%);
 
-    --primary-black: hsl(266, 20%, 8%);
-    --primary-black-transparent: hsla(266, 20%, 8%, 0.6);
-    --primary-black-transparent-less: hsla(266, 20%, 8%, 0.3);
+    --primary-black: hsl(266, 20%, 5%);
+    --primary-black-transparent: hsla(266, 20%, 5%, 0.6);
+    --primary-black-transparent-less: hsla(266, 20%, 5%, 0.3);
     --primary-white: hsl(266, 20%, 98%);
     --primary-white-transparent: hsla(266, 20%, 98%, 0.6);
     --primary-white-transparent-less: hsla(266, 20%, 98%, 0.3);
