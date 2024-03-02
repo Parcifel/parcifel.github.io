@@ -21,6 +21,9 @@
 <body>
     <nav class="nav-container">
         <div class="nav-alias">
+            <div class="nav-headshot">
+                <img src="/static/avatar_headshot.png" alt="Parcifel Avatar">
+            </div>
             <h1>Parcifel</h1>
         </div>
 
@@ -58,6 +61,8 @@
             </div>
         </div>
         <div class="hero-headshot">
+            <img src="/static/avatar_bodyshot.png" alt="Parcifel Avatar" class="hero-canvas">
+          <!--
             <canvas class="hero-canvas"></canvas>
             <script type="module">
                 var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -161,7 +166,7 @@
                     scene.rotation.y = yRotation;
                 })
 
-            </script>
+            </script>-->
         </div>
     </div>
 
@@ -212,6 +217,10 @@
         Call to Action
     </div>
 
+    <div class="container more-container">
+      
+    </div>
+
     <footer> 
         Footer
     </footer>
@@ -224,7 +233,14 @@
     let dev = true;
 
     if (dev) {
-        redirect("/underConstruction.html");
+        //redirect("/underConstruction.html");
+        const highlights_container = document.querySelector(".highlights-container");
+        highlights_container.style.display = "none";
+        const action_container = document.querySelector(".action-container");
+        action_container.style.display = "none";
+
+        const more_container = document.querySelector(".more-container");
+        more_container.style.display = "block";
     }
 
 

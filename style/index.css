@@ -63,6 +63,11 @@ body {
     width: 0;
     margin-right: auto;
     margin-left: 1rem;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     opacity: 0;
     background: var(--webkit-linear-gradient);
@@ -77,6 +82,20 @@ body {
 
 .nav-alias h1 {
     font-size: var(--header-size);
+}
+
+.nav-alias .nav-headshot {
+    height: 4vh;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.nav-alias .nav-headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .nav-links {
@@ -561,7 +580,6 @@ body {
 
 
 
-
 .highlights-container {
     height: 75vh;
     background-color: aqua;
@@ -570,4 +588,9 @@ body {
 .action-container {
     height: 75vh;
     background-color: blueviolet;
+}
+
+.more-container {
+    height: 75vh;
+    background-color: brown;
 }
