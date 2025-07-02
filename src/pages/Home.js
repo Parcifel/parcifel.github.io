@@ -4,6 +4,7 @@ import Card from '../components/Card'
 import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
+import IconCloud from '../components/IconCloud'
 import '../styles/Dashboard.css'
 
 const Home = () => {
@@ -23,14 +24,20 @@ const Home = () => {
         </Card>
       </div>
 
-      <div className='grid-item personal-card-area'>
+      <div className='grid-item skills-card-area'>
+        <IconCloud />
       </div>
 
       <div className='grid-item projects-card-area'>
         <ScrollArea />
       </div>
 
-      <div className='grid-item skills-card-area'>
+      <div className='grid-item personal-card-area'>
+        <Card title="Hobbies" onClick={() => navigate('/projects')}>
+          <p>
+            A quick summary about my hobbies. Click for more!
+          </p>
+        </Card>
       </div>
 
       <div className='grid-item timeline-card-area'>
