@@ -1,0 +1,26 @@
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  padding: 1.5rem;
+  height: calc(100% - 3rem);
+  width: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  flex: 0 0 auto;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}

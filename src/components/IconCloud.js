@@ -3,7 +3,7 @@ import { motion, useSpring, useMotionValue } from 'framer-motion';
 import * as d3 from 'd3-force';
 import './IconCloud.css';
 import {
-  FaReact, FaJs, FaHtml5, FaCss3Alt, FaGithub, FaPython, FaNodeJs
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaGithub, FaPython, FaNodeJs, FaJava, FaJediOrder, FaUnity
 } from 'react-icons/fa';
 
 const icons = [
@@ -14,13 +14,16 @@ const icons = [
   { icon: <FaNodeJs />, label: 'Node.js' },
   { icon: <FaGithub />, label: 'GitHub' },
   { icon: <FaPython />, label: 'Python' },
+  { icon: <FaJava />, label: 'Java' },
+  { icon: <FaJediOrder />, label: 'JediOrder' },
+  { icon: <FaUnity />, label: 'Unity' },
 ];
 
 const compressed = 30;
 const expanded = 50;
 
 const IconCloud = () => {
-  const containerSize = 200;
+  const containerSize = 400;
   const simulationRef = useRef(null);
   const nodeData = useRef(
     icons.map((item, idx) => ({
@@ -47,7 +50,7 @@ const IconCloud = () => {
 
   simulationRef.current = d3.forceSimulation(nodeData.current)
     .force('center', d3.forceCenter(containerSize / 2, containerSize / 2))
-    .force('charge', d3.forceManyBody().strength(25))
+    .force('charge', d3.forceManyBody().strength(30))
     .force('collision', d3.forceCollide((d) => d.radius))
     .alphaDecay(0.01)
     .on('tick', () => {
