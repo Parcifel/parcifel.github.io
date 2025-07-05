@@ -1,0 +1,19 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+  z-index: 9999;
+
+  color: white;
+  /* padding: 0.5rem 1rem; */
+  white-space: nowrap;
+  font-weight: 500;
+  font-family: sans-serif;
+  user-select: none;
+}

@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 import './ShimmerBackground.css'
+import { CursorContext } from './CursorContext';
 
 const ShimmerBackground = () => {
   const canvasRef = useRef(null);
-
+  const { pos } = useContext(CursorContext); 
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,9 +17,9 @@ const ShimmerBackground = () => {
     window.addEventListener('resize', resize);
     resize();
 
-    const draw = (x, y) => {
-      console.log(`Drawing at: ${x}, ${y}`);
+    const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const { x, y } = pos;
       
       const grad = ctx.createRadialGradient(x, y, 0, x, y, 300);
       grad.addColorStop(0, 'rgba(147, 73, 243, 0.8)');
@@ -29,16 +30,18 @@ const ShimmerBackground = () => {
       ctx.fillRect(x - 150, y - 150, 300, 300);
     }
   
-    const handleMouseMove = (e) => draw(e.clientX, e.clientY);
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    draw(-9999, -9999);
+    let animationFrameId;
+    const loop = () => {
+      draw();
+      animationFrameId = requestAnimationFrame(loop)
+    }
+    loop()
 
     return () => {
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resize);
-      window.removeEventListener('mousemove', handleMouseMove); 
     };
-  }, []);
+  }, [pos]);
 
   return (
     <canvas ref={canvasRef} className='shimmer-canvas'></canvas>

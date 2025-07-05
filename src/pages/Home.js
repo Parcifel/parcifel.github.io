@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Card from '../components/Card'
 import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
 import IconCloud from '../components/IconCloud'
+import HoverLabel from '../components/HoverLabel'
 import '../styles/Dashboard.css'
 
 const Home = () => {
   const navigate = useNavigate();
+  // const { setHoverLabel } = useContext(CustomCursor);
 
   return (
     <div className='dashboard'>

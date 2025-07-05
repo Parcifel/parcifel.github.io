@@ -4,6 +4,7 @@ import './BusinessCard.css';
 
 import headshot from '../assets/images/headshot.png';
 import {FaGithub, FaLinkedin, FaEnvelope} from 'react-icons/fa';
+import HoverLabel from './HoverLabel';
 
 const BusinessCard = () => {
   return (
@@ -13,10 +14,10 @@ const BusinessCard = () => {
         glareColor="#ffffff"
         glarePosition='all'
         glareBorderRadius='10px'
-        tiltMaxAngleX={3}
-        tiltMaxAngleY={3}
+        tiltMaxAngleX={4}
+        tiltMaxAngleY={4}
         transitionSpeed={1000}
-        scale={1.01}
+        scale={1.05}
         className='tilt-wrapper'
       >
         <div className='business-card'>
@@ -24,18 +25,21 @@ const BusinessCard = () => {
             <h2 className='name'>Pierre du Toit</h2>
             <h2 className='title'>Computer Science Student</h2>
             <div className='social-links'>
-              <a href='https://link' className='github' target='_blank' rel='noopener noreferrer'>
-                <FaGithub className='icon' />
-                <span className='link-text'>GitHub</span>
-              </a>
-              <a href='https://link' className='linkedin' target='_blank' rel='noopener noreferrer'>
-                <FaLinkedin className='icon' />
-                <span className='link-text'>LinkedIn</span>
-              </a>
-              <a href='mailto:' className='email'>
-                <FaEnvelope className='icon' />
-                <span className='link-text'>Email</span>
-              </a>
+              <HoverLabel label="GitHub" >
+                <a href='https://link' className='github' target='_blank' rel='noopener noreferrer'>
+                  <FaGithub className='icon' />
+                </a>
+              </HoverLabel>
+              <HoverLabel label="LinkedIn" >
+                <a href='https://link' className='linkedin' target='_blank' rel='noopener noreferrer'>
+                  <FaLinkedin className='icon' />
+                </a>
+              </HoverLabel>
+              <HoverLabel label="Email" >
+                <a href='mailto:' className='email'>
+                  <FaEnvelope className='icon' />
+                </a>
+              </HoverLabel>
             </div>
           </div>
 

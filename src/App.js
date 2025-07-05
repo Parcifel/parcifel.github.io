@@ -6,6 +6,8 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import ShimmerBackground from './components/ShimmerBackground';
+import { CursorProvider } from './components/CursorContext';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <div className='App'>
+    <CursorProvider className='App'>
+      <CustomCursor />
       <ShimmerBackground />
       <div className='dot-grid' />
 
@@ -38,7 +41,7 @@ function App() {
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </div>
-    </div>
+    </CursorProvider>
   );
 }
 
