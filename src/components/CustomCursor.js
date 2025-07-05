@@ -8,7 +8,8 @@ const CustomCursor = () => {
   const stiffnessValue = 2000;
   const dampingValue = 100;
 
-  const { pos, hoverLabel, hoverStyle } = useContext(CursorContext);
+  // const { pos, hoverLabel, hoverStyle } = useContext(CursorContext);
+  const { pos, hoverLabel, hoverBorderColor } = useContext(CursorContext);
 
   const rawX = useMotionValue(pos.x);
   const rawY = useMotionValue(pos.y);
@@ -26,15 +27,15 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="custom-cursor"
+        className={isLabeling ? "custom-cursor labelled"  : "custom-cursor"}
         style={{
           x: cursorX,
           y: cursorY,
           padding: isLabeling ? '0.5rem 1rem' : 0,
           left: isLabeling ? 0 : '-'+size,
+          border: isLabeling ? `2px solid ${hoverBorderColor || 'white'}` : 'none'
         }}
         animate={{
-          backgroundColor: isLabeling ? "rgba(10, 10, 10, 1)" : 'rgba(10, 10, 10, 0)',
           color: isLabeling ? "#fff" : '#f5f5f5',
         }}
         transition={{ type: 'spring', stiffness: stiffnessValue, damping: dampingValue }}
@@ -43,11 +44,12 @@ const CustomCursor = () => {
           {isLabeling ? (
             <motion.span
               key="label"
+              className='hover-label'
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              style={{ fontSize: 13 }}
+              style={{ fontSize: 16 }}
             >
               {hoverLabel}
             </motion.span>
