@@ -19,9 +19,9 @@ const Home = () => {
       </div>
 
       <div className='grid-item about-card-area'>
-        <Card title="About me" onClick={() => navigate('/about')}>
+        <Card onClick={() => navigate('/about')} title={'About Me'}>
           <p>
-            A quick summary about me. CLick for more!
+            I’m a final-year Computer Science student at Stellenbosch University. I’m passionate about exploring how software can solve real worl problems, with a special interest in machine learning and autonomous systems. My academic interests lie at the intersection of Computer Science and Applied Mathematics. Outside the classroom, I enjoy drawing, swimming, and playing Ultimate Frisbee. I also serve as Vice-Primarius in one of our university’s Commuter Student Communities, where I’ve grown as a leader and active member of campus life.
           </p>
         </Card>
       </div>

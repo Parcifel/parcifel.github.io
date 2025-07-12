@@ -7,16 +7,16 @@ import {
 } from 'react-icons/fa';
 
 const icons = [
-  { icon: <FaReact />, label: 'React' },
-  { icon: <FaJs />, label: 'JavaScript' },
-  { icon: <FaHtml5 />, label: 'HTML5' },
-  { icon: <FaCss3Alt />, label: 'CSS3' },
-  { icon: <FaNodeJs />, label: 'Node.js' },
-  { icon: <FaGithub />, label: 'GitHub' },
-  { icon: <FaPython />, label: 'Python' },
-  { icon: <FaJava />, label: 'Java' },
-  { icon: <FaJediOrder />, label: 'JediOrder' },
-  { icon: <FaUnity />, label: 'Unity' },
+  { icon: <FaReact />, label: 'React', color: '#61DBFA' },
+  { icon: <FaJs />, label: 'JavaScript', color: '#F2E33A' },
+  { icon: <FaHtml5 />, label: 'HTML5', color: '#ED6535' },
+  { icon: <FaCss3Alt />, label: 'CSS3', color: '#2865EF' },
+  { icon: <FaNodeJs />, label: 'Node.js', color: '#81BE28' },
+  { icon: <FaGithub />, label: 'GitHub', color: '#81BE28' },
+  { icon: <FaPython />, label: 'Python', color: '#3370A1' },
+  { icon: <FaJava />, label: 'Java', color: '#F9982F' },
+  { icon: <FaJediOrder />, label: 'JediOrder', color: '#000000' },
+  { icon: <FaUnity />, label: 'Unity', color: '#000000' },
 ];
 
 const compressed = 30;
@@ -33,6 +33,7 @@ const IconCloud = () => {
       icon: item.icon,
       label: item.label,
       radius: compressed,
+      color: item.color,
     }))
   );
   const hoverIndexRef = useRef(null);
@@ -83,6 +84,7 @@ const IconCloud = () => {
           style={{
             x: controlsRef.current[i].x,
             y: controlsRef.current[i].y,
+            backgroundColor: node.color,
           }}
           whileHover={{ scale: 1.5 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}

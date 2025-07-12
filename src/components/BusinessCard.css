@@ -14,17 +14,16 @@
   display: flex;
   /* background: rgba(131, 131, 131, 0.502); */
   border-radius: 10px;
-  border: rgba(255, 255, 255, 0.125) solid 2px;
   padding: 1.5rem 2rem;
   margin: auto;
   overflow: visible;
   width: calc(100% - 4rem - 4px);
   height: calc(100% - 3rem - 4px);
 
-  backdrop-filter: blur(2px) saturate(133%);
-  -webkit-backdrop-filter: blur(2px) saturate(133%);
-  background-color: rgba(19, 17, 40, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(1px) saturate(50%);
+  -webkit-backdrop-filter: blur(1px) saturate(50%);
+  background-color: rgba(55, 52, 56, 0.45);
+  border: 2px solid rgba(241, 217, 250, 0.125);
 }
 
 .card-left {
@@ -101,6 +100,8 @@
   aspect-ratio: 1/1;
   scale: 1;
   transition: all 0.4s ease-in;
+  width: 2rem;
+  aspect-ratio: 1/1;
 }
 
 .social-links a:hover {

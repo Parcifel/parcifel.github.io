@@ -25,6 +25,7 @@
   /* background-color: green; */
   grid-column: 1 / 6;
   grid-row: 1 / 7;
+  overflow: visible;
 }
 
 .about-card-area {
@@ -94,5 +95,4 @@
   color: white;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
 }

@@ -20,14 +20,20 @@ const ShimmerBackground = () => {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const { x, y } = pos;
+      const radius = 200;
       
-      const grad = ctx.createRadialGradient(x, y, 0, x, y, 300);
+      const grad = ctx.createRadialGradient(x, y, 0, x, y, radius);
       grad.addColorStop(0, 'rgba(147, 73, 243, 0.8)');
-      grad.addColorStop(0.5, 'rgba(147, 73, 243, 0.3)');
+      // grad.addColorStop(0.5, 'rgba(147, 73, 243, 0.3)');
       grad.addColorStop(1, 'rgba(147, 73, 243, 0)');
 
       ctx.fillStyle = grad;
-      ctx.fillRect(x - 150, y - 150, 300, 300);
+
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+      // ctx.fillStyle = grad;
+      // ctx.fillRect(x - 150, y - 150, 300, 300);
     }
   
     let animationFrameId;

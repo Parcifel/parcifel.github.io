@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import { CursorContext } from './CursorContext'
+import { MdHeight } from 'react-icons/md'
 
 const HoverLabel = ({ label, children, borderColor }) => {
   // const { setHoverLabel } = useContext(CursorContext)
@@ -20,6 +21,7 @@ const HoverLabel = ({ label, children, borderColor }) => {
     <div
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
+      style={{height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
     >
       {children}
     </div>
