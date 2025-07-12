@@ -8,17 +8,16 @@
   flex-direction: column;
 
   /* Neomorphism */
-  box-shadow: inset 7px 7px 14px #0b0b0b,
-            inset -7px -7px 14px #1f1f1f;
+  box-shadow: inset 15px 15px 30px #0b0b0b,
+            inset -15px -15px 30px #1f1f1f;
 
-  transition: box-shadow 0.7s ease, transform 0.2s ease;
+  transition: all 0.7s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  /* Keep inset shadows, add colored glow */
-  box-shadow:
-    inset 4px 4px 10px #380d70,
-    inset -4px -4px 14px #26202e;
+  background-color: #1a1a1a;
+  box-shadow: inset 7px 7px 14px #070208,
+            inset -7px -7px 14px #231127;
 }
 
 .card h3 {
