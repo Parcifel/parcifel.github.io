@@ -10,7 +10,7 @@ const BusinessCard = () => {
   return (
       <Tilt
         glareEnable={true}
-        glareMaxOpacity={0.1}
+        glareMaxOpacity={0.07}
         glareColor="#a560ff"
         glarePosition='all'
         glareBorderRadius='10px'
