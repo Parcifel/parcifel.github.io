@@ -1,48 +1,35 @@
-import React from 'react';
-import {Routes, Route, BrowserRouter} from 'react-router-dom';
-// import logo from './logo.svg';
-// import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import About from './pages/About';
+
 import ShimmerBackground from './components/ShimmerBackground';
-import { CursorProvider } from './components/CursorContext';
+import ThemeSwitch from './components/ThemeSwitch';
 import CustomCursor from './components/CustomCursor';
+import { CursorProvider } from './components/CursorContext';
+import { ThemeProvider } from './components/ThemeContext';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <CursorProvider className='App'>
-      <CustomCursor />
-      <ShimmerBackground />
-      <div className='dot-grid' />
+    <ThemeProvider>
+      <CursorProvider>
+        <CustomCursor />
 
-      <div style={{position: 'relative', zIndex: 2}}>        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* Add more routes as needed */}
-          {/* <Route path="/projects" element={<Projects />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
-      </div>
-    </CursorProvider>
+        {/* <ShimmerBackground />
+        <div className='dot-grid'/> */}
+        <ThemeSwitch />
+
+        <div style={{ position: 'relative', zIndex: 3 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </CursorProvider>
+    </ThemeProvider>
   );
 }
 
 export default App;
+

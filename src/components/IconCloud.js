@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 import * as d3 from 'd3-force';
@@ -55,7 +56,6 @@ const IconCloud = () => {
     .force('collision', d3.forceCollide((d) => d.radius))
     .alphaDecay(0.01)
     .on('tick', () => {
-      console.log(`HoverIndex: ${hoverIndexRef.current}`);
       nodeData.current.forEach((node, i) => {
         const radius =controlsRef.current[i].radius.get() 
         node.radius = radius;

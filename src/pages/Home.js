@@ -5,7 +5,7 @@ import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
 import IconCloud from '../components/IconCloud'
-import HoverLabel from '../components/HoverLabel'
+import ThemeSwitch from '../components/ThemeSwitch'
 import '../styles/Dashboard.css'
 
 const Home = () => {
@@ -51,6 +51,7 @@ const Home = () => {
           <ContactCard />
         </Card>
       </div>
+
     </div>
   )
 }
