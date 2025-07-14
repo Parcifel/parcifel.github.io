@@ -86,7 +86,10 @@ const IconCloud = () => {
             y: controlsRef.current[i].y,
             backgroundColor: node.color,
           }}
-          whileHover={{ scale: 1.5 }}
+          whileHover={{ 
+            scale: 1.5,
+            boxShadow:  `3px 3px 5px rgb(34, 34, 34), -3px -3px 5px rgb(58, 58, 58)`,
+          }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           onHoverStart={() => {
             hoverIndexRef.current = node.id;

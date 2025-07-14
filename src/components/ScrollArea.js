@@ -1,86 +1,113 @@
-import React, {useRef, useEffect} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import projects from '../data/Projects.json'
+import ProjectCard from './ProjectCard';
 import './ScrollArea.css';
+import HoverLabel from './HoverLabel';
+
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 
 const ScrollArea = () => {
-  // const containerRef = useRef(null);
-  // const animationRef = useRef(null);
-  // const velocityRef = useRef(0);
-
   // useEffect(() => {
   //   const container = containerRef.current;
+  //   const itemWidth = container.scrollWidth / fullProjectList.length;
+  //   const middle = itemWidth * (projects.length);
 
-  //   const handleMouseMove = (e) => {
-  //     const rect = container.getBoundingClientRect();
-  //     const mouseX = e.clientX - rect.left;
-  //     const center = rect.width / 2;
-  //     const offset = mouseX - center;
+  //   container.scrollLeft = middle;
 
-  //     if (mouseX < 50 || mouseX > rect.width - 50) {
-  //       velocityRef.current = 0; // Stop scrolling when near edges
-  //       return;
+  //   const handleScroll = () => {
+  //     const maxScroll = container.scrollWidth;
+  //     const current = container.scrollLeft;
+
+  //     if (current < itemWidth) {
+  //       container.scrollLeft += scrollWidth * projects.length;
+  //     } else if (current > maxScroll - itemWidth * projects.length) {
+  //       container.scrollLeft -= itemWidth * projects.length;
   //     }
-
-  //     // Use a curve for smooth speed
-  //     const maxSpeed = 50;
-  //     const deadZone = 20; // Prevent micro movement near center
-  //     const rawSpeed = offset * 0.5;
-
-  //     velocityRef.current = Math.abs(offset) < deadZone ? 0 : Math.max(-maxSpeed, Math.min(maxSpeed, rawSpeed));
-  //     console.log(`Mouse X: ${mouseX}, Offset: ${offset}, Velocity: ${velocityRef.current}`);
-  //   };
-
-  //   const animate = () => {
-  //     const el = containerRef.current;
-  //     const velocity = velocityRef.current;
-
-  //     if (velocity !== 0) {
-  //       const maxScrollLeft = el.scrollWidth - el.clientWidth;
-  //       const nextScrollLeft = el.scrollLeft + velocity;
-
-  //       if (
-  //         (velocity > 0 && el.scrollLeft >= maxScrollLeft) ||
-  //         (velocity < 0 && el.scrollLeft <= 0)
-  //       ) {
-  //         velocityRef.current = 0; // Stop scrolling when edge is hit
-  //       } else {
-  //         el.scrollLeft = Math.min(Math.max(nextScrollLeft, 0), maxScrollLeft);
-  //       }
-  //     }
-
-  //     animationRef.current = requestAnimationFrame(animate);
-  //   };
-
-  //   container.addEventListener('mousemove', handleMouseMove);
-  //   animationRef.current = requestAnimationFrame(animate);
-
-  //   return () => {
-  //     container.removeEventListener('mousemove', handleMouseMove);
-  //     cancelAnimationFrame(animationRef.current);
-  //     velocityRef.current = 0;
-  //     animationRef.current = null;
   //   }
-  // }, []);
+
+  //   container.addEventListener('scroll', handleScroll);
+  //   return () => container.removeEventListener('scroll', handleScroll)
+  // })
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef();
+
+  const onSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex)
+  }
+
+  const projectList = [...projects, ...projects]
 
   return (
     <div className='scroll-area'>
-      <div className='left-bar'></div>
-      <div className='scroll-container'>
+
+      {/* <div className='scroll-container' ref={containerRef}>
         <div className='scroll-track'>
-          <div className='scroll-item'>
-            <h3>Project 1</h3>
-          </div>
-          <div className='scroll-item'>
-            <h3>Project 2</h3>
-          </div>
-          <div className='scroll-item'>
-            <h3>Project 3</h3>
-          </div>
-          <div className='scroll-item'>
-            <h3>Project 4</h3>
-          </div>
+
+          {projects.map((project, idx) => (
+            <div className='scroll-item'>
+              <ProjectCard key={idx} cardData={project} />
+              </div>
+          ))}
+          
         </div>
+      </div> */}
+      
+      <Swiper
+        className="scroll-container"
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        loop={true}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        modules={[EffectCoverflow]}
+        watchSlidesProgress={true}
+        onSlideChange={onSlideChange}
+        onSwiper={setSwiperInstance}
+        onProgress={(swiper) => {
+  swiper.slides.forEach((slide) => {
+    const progress = slide.progress;
+    const abs = Math.abs(progress);
+
+    const fadeAmount = Math.min(abs * 0.8, 1); // adjust intensity here
+const card = slide.querySelector('.scroll-item');
+if (card) {
+  card.style.opacity = `${1 - fadeAmount}`;
+  card.style.transform = `scale(${1 - Math.min(abs * 0.1, 0.3)})`;
+}
+
+  });
+}}
+
+      >
+        {projectList.map((project, idx) => (
+          <SwiperSlide key={idx} style={{ width: 'max-content' }}>
+            <div className="scroll-item fade-wrapper">
+              <ProjectCard cardData={project} />
+              <div className='fade-mask' />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      
+      <div className='left-bar' onClick={() => swiperInstance?.slidePrev()}>
+        <HoverLabel label={'Previous'} />
       </div>
-      <div className='right-bar'></div>
+      <div className='right-bar' onClick={() => swiperInstance?.slideNext()}>
+        <HoverLabel label={'Next'} />
+      </div>
     </div>
   )
 }

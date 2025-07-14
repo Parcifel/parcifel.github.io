@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .left-bar {
@@ -52,8 +53,9 @@
   border-bottom-right-radius: 100% 60%;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  z-index: 1;
-  box-shadow: 10px 0px 15px rgb(0, 140, 255);
+  z-index: 10;
+  box-shadow: 10px 0px 15px #0a0a0a;
+  transition: box-shadow 0.5s ease;
 }
 
 .right-bar {
@@ -67,6 +69,15 @@
   border-bottom-left-radius: 100% 60%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  z-index: 1;
-  box-shadow: -10px 0px 15px rgb(0, 140, 255);
+  z-index: 10;
+  box-shadow: -10px 0px 15px #0a0a0a;
+  transition: box-shadow 0.5s ease;
+}
+
+.scroll-area:hover > .left-bar {
+  box-shadow: 10px 0px 15px #926767;
+}
+
+.scroll-area:hover > .right-bar {
+  box-shadow: -10px 0px 15px #926767;
 }

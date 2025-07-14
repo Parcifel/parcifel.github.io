@@ -9,7 +9,6 @@ export const CursorProvider = ({ children }) => {
 
   const pushLabel = (label, borderColor) => {
     setLabelStack((prev) => [...prev, { label, borderColor }])
-    console.log(borderColor)
   }
 
   const popLabel = (label) => {
