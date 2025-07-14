@@ -63,33 +63,33 @@ const ScrollArea = () => {
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={3}
+        slidesPerView={2}
         loop={true}
         coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
+          rotate: 10,
+          stretch: 60,
           depth: 100,
           modifier: 2.5,
-          slideShadows: false,
+          slideShadows: true,
         }}
         modules={[EffectCoverflow]}
         watchSlidesProgress={true}
         onSlideChange={onSlideChange}
         onSwiper={setSwiperInstance}
         onProgress={(swiper) => {
-  swiper.slides.forEach((slide) => {
-    const progress = slide.progress;
-    const abs = Math.abs(progress);
+          swiper.slides.forEach((slide) => {
+            const progress = slide.progress;
+            const abs = Math.abs(progress);
 
-    const fadeAmount = Math.min(abs * 0.8, 1); // adjust intensity here
-const card = slide.querySelector('.scroll-item');
-if (card) {
-  card.style.opacity = `${1 - fadeAmount}`;
-  card.style.transform = `scale(${1 - Math.min(abs * 0.1, 0.3)})`;
-}
+            const fadeAmount = Math.min(abs * 0.4, 1); // adjust intensity here
+        const card = slide.querySelector('.scroll-item');
+        if (card) {
+          card.style.opacity = `${1 - fadeAmount}`;
+          card.style.transform = `scale(${1 - Math.min(abs * 0.1, 0.3)})`;
+        }
 
-  });
-}}
+          });
+        }}
 
       >
         {projectList.map((project, idx) => (

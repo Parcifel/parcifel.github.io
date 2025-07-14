@@ -1,17 +1,58 @@
 [
   {
-    "title": "Project 1",
-    "coverImage": "01253.png",
-    "description": "This is the project description"
+    "title": "AirRace (Boardgame)",
+    "outcome": "Functional Programming",
+    "startDate": "2023-02-01",
+    "endDate": "2023-05-31",
+    "description": "A fun project to get started and learn basic programming principles. It is a boardgame style game with a animated GUI. An extra restriction of the project was to not use OOP.",
+    "technologies": [
+      "Python"
+    ]
   },
   {
-    "title": "Project 2",
-    "coverImage": "01254.png",
-    "description": "This is the project description"
+    "title": "Chess",
+    "outcome": "Object Oriented Programming",
+    "startDate": "2023-08-01",
+    "endDate": "2023-11-31",
+    "description": "A Chess application with working GUI and custom animations. I also developed a custom GUI API ontop of PyGame to help me with this project.",
+    "technologies": [
+      "Python",
+      "PyGame"
+    ]
   },
   {
-    "title": "Project 3",
-    "coverImage": "01255.png",
-    "description": "This is the project description"
+    "title": "Braille Translater",
+    "outcome": "Finite Automata and Algorithms",
+    "startDate": "2024-02-01",
+    "endDate": "2024-05-31",
+    "description": "This project translates a special form of braile into human readable text, and vica cerva. Furthermore it also uses a form of finite autometa to translate contractions or words into special braille characters.",
+    "technologies": [
+      "Java",
+      "Advanced Algorithms"
+    ]
+  },
+  {
+    "title": "Compiler",
+    "outcome": "Low Level Programming",
+    "startDate": "2024-08-01",
+    "endDate": "2024-11-31",
+    "description": "A compiler of a made up programming language that includes most of the normal components of modern programming languages. It compiles into JVM language that then runs with the normal JVM.",
+    "technologies": [
+      "C/C++",
+      "Assembly",
+      "JVM"
+    ]
+  },
+  {
+    "title": "Messaging App",
+    "outcome": "Socketing",
+    "startDate": "2025-02-01",
+    "endDate": "2025-05-31",
+    "description": "Exploring socket technology with different protocols and packet types over a local network. This project streched over 4 programs; two of wich are messaging, file transfer and voice calls.",
+    "technologies": [
+      "Java",
+      "Sockets",
+      "FTP"
+    ]
   }
 ]

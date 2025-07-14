@@ -5,12 +5,16 @@ import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
 import IconCloud from '../components/IconCloud'
-import ThemeSwitch from '../components/ThemeSwitch'
+import HobbyCard from '../components/HobbyCard'
 import '../styles/Dashboard.css'
+import data from '../data/Hobbies.json'
 
 const Home = () => {
   const navigate = useNavigate();
   // const { setHoverLabel } = useContext(CustomCursor);
+
+  const hobbyImages = data.images
+  const hobbyImage = hobbyImages[Math.floor(Math.random() * hobbyImages.length)];
 
   return (
     <div className='dashboard'>
@@ -36,9 +40,7 @@ const Home = () => {
 
       <div className='grid-item personal-card-area'>
         <Card title="Hobbies" onClick={() => navigate('/projects')}>
-          <p>
-            A quick summary about my hobbies. Click for more!
-          </p>
+          <HobbyCard image={hobbyImage} />
         </Card>
       </div>
 
