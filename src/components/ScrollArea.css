@@ -9,9 +9,9 @@
   width: 100%;
   height: 100%;
   overflow-x: visible;
-  overflow-y: none;
+  overflow-y: visible;
   scrollbar-width: none;
-  -ms-overflow-style: none;
+  -ms-overflow-style: visible;
   scroll-behavior: smooth;
   z-index: 0;
 }
@@ -77,4 +77,10 @@
 
 .scroll-area:hover > .right-bar {
   box-shadow: -10px 0px 15px #9349f3;
+}
+
+.expanded-content {
+  background-color: #9349f3;
+  width: 80vw;
+  z-index: 1000;
 }

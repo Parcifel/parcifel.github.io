@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Card from '../components/Card'
+import MorphingCards from '../components/MorphingCards'
 import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
@@ -46,12 +47,14 @@ const Home = () => {
 
       <div className='grid-item timeline-card-area'>
         <Card title="Timeline"></Card>
+        {/* <MorphingCards /> */}
       </div>
 
       <div className='grid-item contact-card-area'>
         <Card title="Contact me">
           <ContactCard />
         </Card>
+        {/* <MorphingCards /> */}
       </div>
 
     </div>

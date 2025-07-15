@@ -2,6 +2,9 @@ import React from 'react'
 import "./Dates.css"
 
 const Dates = ({ startDate, endDate}) => {
+  const startDateText = new Date(startDate);
+  const endDateText = new Date(endDate)
+
   return (
     <div className="date-visual">
       <div className="date-item">

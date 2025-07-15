@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
 import Home from './pages/Home';
 import About from './pages/About';
+import ProjectDetail from './pages/ProjectDetail';
 
 import ShimmerBackground from './components/ShimmerBackground';
 import ThemeSwitch from './components/ThemeSwitch';
@@ -15,16 +17,19 @@ function App() {
     <ThemeProvider>
       <CursorProvider>
         <CustomCursor />
-
-        {/* <ShimmerBackground />
-        <div className='dot-grid'/> */}
         <ThemeSwitch />
 
         <div style={{ position: 'relative', zIndex: 3 }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <LayoutGroup>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Home />} />
+                <Route path="/projects/:id" element={<ProjectDetail />} />
+              </Routes>
+            </LayoutGroup>
+          </AnimatePresence>
         </div>
       </CursorProvider>
     </ThemeProvider>

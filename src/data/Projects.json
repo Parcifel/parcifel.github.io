@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "AirRace (Boardgame)",
     "outcome": "Functional Programming",
     "startDate": "2023-02-01",
@@ -10,6 +11,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "Chess",
     "outcome": "Object Oriented Programming",
     "startDate": "2023-08-01",
@@ -21,6 +23,7 @@
     ]
   },
   {
+    "id": 3,
     "title": "Braille Translater",
     "outcome": "Finite Automata and Algorithms",
     "startDate": "2024-02-01",
@@ -32,6 +35,7 @@
     ]
   },
   {
+    "id": 4,
     "title": "Compiler",
     "outcome": "Low Level Programming",
     "startDate": "2024-08-01",
@@ -44,6 +48,7 @@
     ]
   },
   {
+    "id": 5,
     "title": "Messaging App",
     "outcome": "Socketing",
     "startDate": "2025-02-01",
