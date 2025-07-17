@@ -381,7 +381,7 @@ function ExpandedCard({ card, onClose }) {
               <p>{card.description}</p>
             </div>
 
-            <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">  
+            {/* <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">  
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
               </p>
@@ -397,7 +397,7 @@ function ExpandedCard({ card, onClose }) {
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
               </p>
-            </div>
+            </div> */}
 
             {/* <button
               onClick={onClose}
