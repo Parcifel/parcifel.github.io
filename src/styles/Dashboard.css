@@ -21,6 +21,13 @@
   overflow: visible;
 }
 
+@media (pointer:none), (pointer:coarse) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .business-card-area {
   /* background-color: green; */
   grid-column: 1 / 6;
