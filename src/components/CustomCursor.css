@@ -16,6 +16,11 @@
   font-weight: 500;
   font-family: sans-serif;
   user-select: none;
+  text-shadow: 10px 10px black;
+}
+
+.cursor-icon {
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6));
 }
 
 .custom-cursor.labelled {

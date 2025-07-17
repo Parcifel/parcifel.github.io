@@ -1,5 +1,6 @@
 .icon-cloud {
   position: relative;
+  overflow: hidden;
 }
 
 .icon-cloud-item {

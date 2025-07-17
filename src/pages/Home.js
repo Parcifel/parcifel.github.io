@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Card from '../components/Card'
-import MorphingCards from '../components/MorphingCards'
 import ContactCard from '../components/ContactCard'
 import BusinessCard from '../components/BusinessCard'
 import ScrollArea from '../components/ScrollArea'
@@ -25,7 +24,11 @@ const Home = () => {
 
       <div className='grid-item about-card-area'>
         <Card onClick={() => navigate('/about')} title={'About Me'}>
-          <p>
+          <p 
+            style={{ 
+              fontFamily: 'SpaceGrotesk-Regular', margin: "2rem", fontSize: "1.15rem"
+            }}
+          >
             I’m a final-year Computer Science student at Stellenbosch University. I’m passionate about exploring how software can solve real worl problems, with a special interest in machine learning and autonomous systems. My academic interests lie at the intersection of Computer Science and Applied Mathematics. Outside the classroom, I enjoy drawing, swimming, and playing Ultimate Frisbee. I also serve as Vice-Primarius in one of our university’s Commuter Student Communities, where I’ve grown as a leader and active member of campus life.
           </p>
         </Card>
@@ -47,14 +50,10 @@ const Home = () => {
 
       <div className='grid-item timeline-card-area'>
         <Card title="Timeline"></Card>
-        {/* <MorphingCards /> */}
       </div>
 
       <div className='grid-item contact-card-area'>
-        <Card title="Contact me">
-          <ContactCard />
-        </Card>
-        {/* <MorphingCards /> */}
+        <ContactCard />
       </div>
 
     </div>

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import ProjectDetail from './pages/ProjectDetail';
+// import COnstruction from './pages/Construction'
 
 import ShimmerBackground from './components/ShimmerBackground';
 import ThemeSwitch from './components/ThemeSwitch';
@@ -25,8 +25,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Home />} />
-                <Route path="/projects/:id" element={<ProjectDetail />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </LayoutGroup>
           </AnimatePresence>

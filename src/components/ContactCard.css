@@ -1,0 +1,99 @@
+.contact-form {
+  position: relative;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  padding: 0.5rem;
+  background: #f7f7f9;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.contact-form h1 {
+  margin: 0.5rem auto 0;
+  font-size: 50px;
+  font-family: "Bitcount Single", system-ui;
+}
+
+.contact-form .arrow-icon{
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #151515;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .arrow-icon *{
+  position: relative;
+  left: -1px;
+  bottom: -1px;
+  width: 30px;
+  height: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem 1rem;
+  color: #f7f7f9;
+  caret-color: #a45eff;
+  background: linear-gradient(145deg, #0a0a0a, #292929);
+  box-shadow:  5px 5px 10px #b7b7b8,
+             -5px -5px 10px #ffffff;
+  border: none;
+  border-radius: calc(16px - 0.5rem);
+  outline: none;
+  font-family: 'SpaceGrotesk-Regular', sans-serif;
+  letter-spacing: 1px;
+}
+
+.contact-form input:focus {
+  border: 1px solid #a45eff;
+}
+
+.contact-form textarea {
+  flex: 1 1 auto;
+  resize: none;
+}
+
+.contact-form textarea:focus {
+  border: 1px solid #a45eff;
+}
+
+.contact-form .button-container {
+  height: 2rem;
+  border: 1px solid #151515;
+  border-radius: calc(16px);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form button {
+  color: #151515;
+  font-family: 'SpaceGrotesk-Regular', sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: calc(16px - 0.25rem);
+  /* background: linear-gradient(145deg, #0a0a0a00, #29292900); */
+  background-color: #15151500;
+  flex: auto;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.contact-form button:hover {
+  color: #ffffff;
+  /* background: linear-gradient(145deg, #0a0a0a, #292929); */
+  background-color: #151515;
+  border: none;
+}
+
+

@@ -45,7 +45,7 @@ const ScrollArea = () => {
     setActiveIndex(swiper.activeIndex)
   }
 
-  const projectList = [...projects, ...projects]
+  const projectList = projects;
 
   return (
     <div className='scroll-area'>
@@ -87,25 +87,26 @@ const ScrollArea = () => {
               const abs = Math.abs(progress);
 
               const fadeAmount = Math.min(abs * 0.4, 1); // adjust intensity here
-          const card = slide.querySelector('.scroll-item');
-          if (card) {
-            card.style.opacity = `${1 - fadeAmount}`;
-            card.style.transform = `scale(${1 - Math.min(abs * 0.1, 0.3)})`;
-          }
-
+              const card = slide.querySelector('.scroll-item');
+              if (card) {
+                card.style.opacity = `${1 - fadeAmount}`;
+                card.style.transform = `scale(${1 - Math.min(abs * 0.1, 0.3)})`;
+              }
             });
           }}
         >
           {projectList.map((project, idx) => (
             <SwiperSlide key={idx} style={{ width: 'max-content' }}>
-              <div className="scroll-item fade-wrapper">
+              <div 
+                className="scroll-item fade-wrapper"
+                onClick={() => swiperInstance?.slideToLoop(idx)}
+              >
                 <ProjectCard 
                   key={project.id}
                   cardData={project}
                   expandedId={expandedId}
                   setExpandedId={setExpandedId} 
                 />
-                {/* <div className='fade-mask' /> */}
               </div>
             </SwiperSlide>
           ))}

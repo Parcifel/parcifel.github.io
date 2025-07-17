@@ -1,10 +1,207 @@
+// import React from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import Dates from "./Dates";
+// import HoverLabel from "./HoverLabel";
+// import { FaTimes } from "react-icons/fa";
+// import "./ProjectCard.css";
+
+// const projectCoverImage = `/assets/images/project-default.png`;
+
+// const ProjectCard = ({ cardData, expandedId, setExpandedId }) => {
+//   const id = cardData.id;
+//   const isExpanded = expandedId === id;
+
+//   return (
+//     <>
+//       <motion.div
+//         layoutId={`project-container-${id}`}
+//         className="project-card"
+//         onClick={() => setExpandedId(id)}
+//         style={{
+//           display: isExpanded ? "none" : "flex", // hide compact card when expanded
+//         }}
+//         whileHover={{ scale: 1.03 }}
+//         transition={{ type: "spring", stiffness: 250, damping: 35 }}
+//       >
+//         <motion.img
+//           layoutId={`project-image-${id}`}
+//           src={projectCoverImage}
+//           alt="Project Cover Image"
+//           className="project-cover-image"
+//         />
+//         <div className="project-info-container">
+//           <motion.div 
+//             className="fade-wrapper" 
+//             layoutId={`fade-wrapper-${id}`}  
+//             style={{height: '50%'}}
+//           />
+//           <motion.div layoutId={`project-info-${id}`} className="project-info">
+//             <div className="line">
+//               <motion.h3
+//                 layoutId={`project-title-${id}`}
+//                 className="project-title"
+//               >
+//                 {cardData.title}
+//               </motion.h3>
+//             </div>
+//             <div
+//               className="line"
+//               style={{
+//                 display: "flex",
+//                 justifyContent: "space-between",
+//                 alignItems: "center",
+//                 marginTop: 8,
+//               }}
+//             >
+//               <div className="technology-list">{/* icons can go here */}</div>
+//               <motion.div layoutId={`project-dates-${id}`} className="dates">
+//                 <Dates
+//                   startDate={cardData.startDate}
+//                   endDate={cardData.endDate}
+//                 />
+//               </motion.div>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </motion.div>
+
+//       <AnimatePresence>
+//         {isExpanded && (
+//           <ExpandedCard card={cardData} onClose={() => setExpandedId(null)} />
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
+
+// import ReactDOM from "react-dom";
+
+// function ExpandedCard({ card, onClose }) {
+//   const id = card.id;
+
+//   return ReactDOM.createPortal(
+//     <div
+//       style={{
+//         position: "fixed",
+//         top: 0,
+//         left: 0,
+//         width: "100vw",
+//         height: "100vh",
+//         zIndex: 500,
+//         background: "#ffffff00",
+//         overflow: "hidden",
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//       }}
+//       onClick={onClose}
+//     >
+//       <motion.div
+//         className="project-info-container"
+//         layoutId={`project-container-${id}`}
+//         onClick={(e) => e.stopPropagation()}
+//         style={{
+//           position: "relative",
+//           background: "#151515",
+//           borderRadius: 32,
+//           boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
+//           width: "70%",
+//           maxWidth: "700px",
+//           height: "80%",
+//           display: "flex",
+//           flexDirection: "column",
+//           cursor: "none",
+//           overflowX: "hidden",
+//           overflowY: "auto",
+//         }}
+//         transition={{ type: "spring", stiffness: 200, damping: 35 }}
+//       >
+//         <motion.img
+//           className="project-cover-image"
+//           layoutId={`project-image-${id}`}
+//           src={projectCoverImage}
+//           alt="Project Cover Image"
+//           style={{
+//             height: 250,
+//             objectFit: "cover",
+//           }}
+//         />
+//         <motion.div 
+//           className="fade-wrapper"
+//           layoutId={`fade-wrapper-${id}`}  
+//           style={{
+//             height: 'calc(250px + 2rem)',
+//           }}
+//         />
+
+//         <motion.div layoutId={`project-info-${id}`} style={{ flex: "1 1 auto" }}>
+//           <div className="line"> 
+//             <motion.h3
+//               className="project-title"
+//               layoutId={`project-title-${id}`}
+//               style={{ fontSize: 32 }}
+//             >
+//               {card.title}
+//             </motion.h3>
+
+//             <motion.div 
+//               className="dates" 
+//               layoutId={`project-dates-${id}`} 
+//               style={{ marginLeft: "auto", maxWidth: "max-content", marginRight: '1rem'}}
+//             >
+//               <Dates startDate={card.startDate} endDate={card.endDate} />
+//             </motion.div>
+//           </div>
+
+//           {/* Extra detail content */}
+//           <div style={{ fontSize: 16, lineHeight: 1.5, color: "#555" }} className="display-area">
+//             <p>{card.description}</p>
+//             {/* Add Additional elements here */}
+//           </div>
+
+//           <button
+//             onClick={onClose}
+//             style={{
+//               position: "absolute",
+//               top: 0,
+//               right: 0,
+//               margin: "1rem",
+//               padding: "1rem",
+//               fontSize: 16,
+//               borderRadius: 8,
+//               border: "none",
+//               borderRadius: "50%",
+//               background: "#ffffff20",
+//               color: "white",
+//             }}
+//           >
+//             <FaTimes />
+//           </button>
+//         </motion.div>
+//       </motion.div>
+//     {/* </motion.div> */}
+//     </div>,
+//     document.body
+//   );
+// }
+
+// export default ProjectCard;
 import React from "react";
+import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Dates from "./Dates";
 import HoverLabel from "./HoverLabel";
+import { FaTimes } from "react-icons/fa";
+import LabelList from "./LabelList";
 import "./ProjectCard.css";
 
 const projectCoverImage = `/assets/images/project-default.png`;
+
+const transitionSettings = {
+  type: "spring",
+  stiffness: 200,
+  damping: 35,
+};
 
 const ProjectCard = ({ cardData, expandedId, setExpandedId }) => {
   const id = cardData.id;
@@ -12,62 +209,65 @@ const ProjectCard = ({ cardData, expandedId, setExpandedId }) => {
 
   return (
     <>
-      {/* Compact card */}
-      <motion.div
-        layoutId={`project-container-${id}`}
-        className="project-card"
-        onClick={() => setExpandedId(id)}
-        style={{
-          cursor: "pointer",
-          borderRadius: 16,
-          overflow: "hidden",
-          boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-          background: "white",
-          display: isExpanded ? "none" : "flex", // hide compact card when expanded
-          flexDirection: "column",
-        }}
-        whileHover={{ scale: 1.03 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
-        <motion.img
-          layoutId={`project-image-${id}`}
-          src={projectCoverImage}
-          alt="Project Cover Image"
-          style={{ width: "100%", height: "auto", display: "block" }}
-        />
-
-        <div className="project-info-container" style={{ padding: 16 }}>
-          <motion.div layoutId={`project-info-${id}`} className="project-info">
-            <div className="line">
-              <motion.h3
-                layoutId={`project-title-${id}`}
-                style={{ margin: 0, fontSize: 20 }}
-              >
-                {cardData.title}
-              </motion.h3>
-            </div>
-            <div
-              className="line"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginTop: 8,
-              }}
+      <AnimatePresence>
+        {!isExpanded && (
+          <motion.div
+            layoutId={`project-container-${id}`}
+            className="project-card"
+            onClick={() => setExpandedId(id)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={transitionSettings}
+            whileHover={{ scale: 1.03 }}
+            style={{borderRadius: 16}}
+          >
+            <motion.img
+              layoutId={`project-image-${id}`}
+              src={projectCoverImage}
+              alt="Project Cover Image"
+              className="project-cover-image"
+              transition={transitionSettings}
+            />
+            <motion.div
+              className="project-info-container"
+              layoutId={`project-info-container-${id}`}
+              transition={transitionSettings}
             >
-              <div className="technology-list">{/* icons can go here */}</div>
-              <motion.div layoutId={`project-dates-${id}`} className="dates">
-                <Dates
-                  startDate={cardData.startDate}
-                  endDate={cardData.endDate}
-                />
+              <motion.div
+                className="fade-wrapper"
+                layoutId={`fade-wrapper-${id}`}
+                style={{ height: '50%', opacity: 1 }}
+                transition={transitionSettings}
+              />
+              <motion.div layoutId={`project-info-${id}`} className="project-info" transition={transitionSettings}>
+                <div className="line">
+                  <motion.h3
+                    layoutId={`project-title-${id}`}
+                    className="project-title"
+                    transition={transitionSettings}
+                  >
+                    {cardData.title}
+                  </motion.h3>
+                </div>
+                <div className="line">
+                  <motion.div layoutId={`technology-list-${id}`} className="technology-list">
+                    <LabelList list={cardData.technologies} />
+                  </motion.div>
+                  <motion.div
+                    layoutId={`project-dates-${id}`}
+                    className="dates"
+                    transition={transitionSettings}
+                  >
+                    <Dates startDate={cardData.startDate} endDate={cardData.endDate} />
+                  </motion.div>
+                </div>
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
-        </div>
-      </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Expanded detail */}
       <AnimatePresence>
         {isExpanded && (
           <ExpandedCard card={cardData} onClose={() => setExpandedId(null)} />
@@ -77,60 +277,20 @@ const ProjectCard = ({ cardData, expandedId, setExpandedId }) => {
   );
 };
 
-import ReactDOM from "react-dom";
-
 function ExpandedCard({ card, onClose }) {
   const id = card.id;
 
   return ReactDOM.createPortal(
-    <div
+    <motion.div
+      className="expanded-overlay"
       style={{
         position: "fixed",
         top: 0,
         left: 0,
         width: "100vw",
         height: "100vh",
-        zIndex: 10000,
-        background: "#ffffff50",
-        overflow: "hidden",
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-      onClick={onClose}
-    >
-      {/* Inner motion.div with layoutId for morphing */}
-      <motion.div
-        layoutId={`project-container-${id}`}
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          background: "white",
-          borderRadius: 20,
-          boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
-          padding: 32,
-          width: "70%",
-          maxWidth: "700px",
-          height: "80%",
-          display: "flex",
-          flexDirection: "column",
-          cursor: "auto",
-          overflowY: "auto",
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
-    {/* <motion.div
-      onClick={onClose}
-      style={{
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        width: "80vw",
-        maxWidth: 700,
-        height: "70vh",
-        transform: "translate(-50%, -50%)",
-        zIndex: 10000,
-        cursor: "pointer",
-        background: "rgba(0,0,0,0.3)", // backdrop tint
+        zIndex: 150,
+        background: "#00000088",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -138,80 +298,129 @@ function ExpandedCard({ card, onClose }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-    > */}
-      {/* The morphing card container */}
+      transition={{ duration: 0.3 }}
+      onClick={onClose}
+    >
       <motion.div
         layoutId={`project-container-${id}`}
-        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside card
+        className="project-card"
+        onClick={(e) => e.stopPropagation()}
         style={{
-          background: "white",
-          borderRadius: 20,
+          position: "relative",
+          background: "#151515",
+          borderRadius: 32,
           boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
-          padding: 32,
-          width: "100%",
-          height: "100%",
+          width: "70%",
+          maxWidth: "700px",
+          height: "80%",
           display: "flex",
           flexDirection: "column",
-          cursor: "auto",
-          overflowY: "auto",
+          overflowX: "hidden",
+          overflowY: "scroll",
         }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={transitionSettings}
       >
         <motion.img
+          className="project-cover-image"
           layoutId={`project-image-${id}`}
           src={projectCoverImage}
           alt="Project Cover Image"
-          style={{
-            width: "100%",
-            height: 250,
-            objectFit: "cover",
-            borderRadius: 12,
-            marginBottom: 24,
-          }}
+          style={{ height: 250, objectFit: "cover" }}
+          transition={transitionSettings}
         />
 
-        <motion.div layoutId={`project-info-${id}`} style={{ flex: "1 1 auto" }}>
-          <motion.h3
-            layoutId={`project-title-${id}`}
-            style={{ margin: "0 0 20px 0", fontSize: 32 }}
-          >
-            {card.title}
-          </motion.h3>
+        <motion.div
+          className="fade-wrapper"
+          layoutId={`fade-wrapper-${id}`}
+          style={{ height: 254, opacity: 1}}
+          transition={transitionSettings}
+        />
 
-          <motion.div layoutId={`project-dates-${id}`} style={{ marginBottom: 24 }}>
-            <Dates startDate={card.startDate} endDate={card.endDate} />
+        <motion.div
+          className="project-info-container"
+          layoutId={`project-info-container-${id}`}
+          transition={transitionSettings}
+          style={{
+            position: "absolute",
+            top: 250,
+            paddingTop: '2rem'
+          }}
+        >
+          <motion.div className="project-info" layoutId={`project-info-${id}`} style={{ flex: "1 1 auto" }} transition={transitionSettings}>
+            <div className="line">
+              <motion.h3
+                className="project-title"
+                layoutId={`project-title-${id}`}
+                style={{ fontSize: 32 }}
+                transition={transitionSettings}
+              >
+                {card.title}
+              </motion.h3>
+
+              <motion.div
+                className="dates"
+                layoutId={`project-dates-${id}`}
+                style={{ marginLeft: "auto", maxWidth: "max-content", marginRight: '1rem' }}
+                transition={transitionSettings}
+              >
+                <Dates startDate={card.startDate} endDate={card.endDate} />
+              </motion.div>
+            </div>
+
+            <div className="line">
+              <motion.div 
+                layoutId={`technology-list-${id}`}
+                className="technology-lsit"
+                style={{margin: "0 1.5rem"}}
+              >
+                <LabelList list={card.technologies} />
+              </motion.div>
+            </div>
+
+            <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">
+              <p>{card.description}</p>
+            </div>
+
+            <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">  
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+              </p>
+            </div>
+
+            <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">  
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+              </p>
+            </div>
+
+            <div style={{ fontSize: 16, lineHeight: 1.5, color: "#bbb" }} className="display-area">  
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+              </p>
+            </div>
+
+            {/* <button
+              onClick={onClose}
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                // margin: "1rem",
+                padding: "1rem",
+                fontSize: 16,
+                borderRadius: "50%",
+                background: "#ffffff20",
+                color: "white",
+                border: "none",
+                zIndex: 502,
+              }}
+            >
+              <FaTimes />
+            </button> */}
           </motion.div>
-
-          {/* Extra detail content */}
-          <div style={{ fontSize: 16, lineHeight: 1.5, color: "#555" }}>
-            <p>{card.description}</p>
-            <p>
-              Here you can add more detailed information about the project,
-              links, images, or whatever else you want.
-            </p>
-          </div>
-
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            style={{
-              marginTop: 24,
-              padding: "10px 20px",
-              fontSize: 16,
-              borderRadius: 8,
-              border: "none",
-              background: "#007bff",
-              color: "white",
-              cursor: "pointer",
-              alignSelf: "flex-start",
-            }}
-          >
-            Close
-          </button>
         </motion.div>
       </motion.div>
-    </motion.div>
-    </div>,
+    </motion.div>,
     document.body
   );
 }

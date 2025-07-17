@@ -3,7 +3,7 @@ import Tilt from 'react-parallax-tilt';
 import './BusinessCard.css';
 
 import headshot from '../assets/images/headshot.png';
-import {FaGithub, FaLinkedin, FaEnvelope} from 'react-icons/fa';
+import {FaGithub, FaLinkedin, FaInstagram} from 'react-icons/fa';
 import HoverLabel from './HoverLabel';
 
 const BusinessCard = () => {
@@ -36,8 +36,8 @@ const BusinessCard = () => {
                 </HoverLabel>
               </a>
               <a href='mailto:' className='email'>
-                <HoverLabel label="Email" borderColor={'#7815fa'} >
-                  <FaEnvelope className='icon' />
+                <HoverLabel label="Instagram" borderColor={'#7815fa'} >
+                  <FaInstagram className='icon' />
                 </HoverLabel>
               </a>
             </div>

@@ -61,11 +61,10 @@ const CustomCursor = () => {
               exit={{ opacity: 0, scale: 0.6}}
               transition={{ duration: 0.2 }}
             >
-              <FaLocationArrow size={size} />
+              <FaLocationArrow size={size} className='cursor-icon' />
             </motion.span>
           )}
         </AnimatePresence>
-        {/* {isLabeling ? hoverLabel : <FaLocationArrow style={{ width: size.width, height: size.height}}/> } */}
       </motion.div>
 
       <motion.div
