@@ -25,17 +25,17 @@ const BusinessCard = () => {
             <h2 className='name'>Pierre du Toit</h2>
             <h2 className='title'>Computer Science Student</h2>
             <div className='social-links'>
-              <a href='https://link' className='github' target='_blank' rel='noopener noreferrer'>
+              <a href='https://github.com/Parcifel' className='github' target='_blank' rel='noopener noreferrer'>
                 <HoverLabel label="GitHub" borderColor={'#3fa236'} >
                   <FaGithub className='icon' />
                 </HoverLabel>
               </a>
-              <a href='https://link' className='linkedin' target='_blank' rel='noopener noreferrer'>
+              <a href='https://www.linkedin.com/in/pierre-du-toit-09180b195/' className='linkedin' target='_blank' rel='noopener noreferrer'>
                 <HoverLabel label="LinkedIn" borderColor={'#0077b5'} >
                   <FaLinkedin className='icon' />
                 </HoverLabel>
               </a>
-              <a href='mailto:' className='email'>
+              <a href='https://www.instagram.com/pierrecifel09/' target='_blank' rel='noopener noreferrer' className='instagram'>
                 <HoverLabel label="Instagram" borderColor={'#7815fa'} >
                   <FaInstagram className='icon' />
                 </HoverLabel>
