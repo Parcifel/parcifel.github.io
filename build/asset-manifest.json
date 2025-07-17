@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3f1b4778.css",
+    "main.js": "/static/js/main.f6c6414e.js",
+    "static/media/headshot.png": "/static/media/headshot.a2f638f40037de932b98.png",
+    "static/media/SpaceGrotesk-Variable.ttf": "/static/media/SpaceGrotesk-Variable.f9de0123341a46968cb7.ttf",
+    "static/media/SpaceGrotesk-Regular.ttf": "/static/media/SpaceGrotesk-Regular.a6980e1d6c3c9ca2ebdd.ttf",
+    "static/media/SpaceGrotesk-Medium.ttf": "/static/media/SpaceGrotesk-Medium.41bc013dba9e72d31079.ttf",
+    "static/media/SpaceGrotesk-SemiBold.ttf": "/static/media/SpaceGrotesk-SemiBold.c02e3ec9e32a64dfc81b.ttf",
+    "static/media/SpaceGrotesk-Light.ttf": "/static/media/SpaceGrotesk-Light.0558471bfa73db2ebbaf.ttf",
+    "static/media/SpaceGrotesk-Bold.ttf": "/static/media/SpaceGrotesk-Bold.e6d9b7f9c222417144f9.ttf",
+    "static/media/SpaceGrotesk-Variable.woff2": "/static/media/SpaceGrotesk-Variable.bc0329c97086a383e374.woff2",
+    "static/media/SpaceGrotesk-Variable.woff": "/static/media/SpaceGrotesk-Variable.a93551a14a249c36ac9f.woff",
+    "static/media/SpaceGrotesk-Regular.woff": "/static/media/SpaceGrotesk-Regular.bd17f049ed719faeeb06.woff",
+    "static/media/SpaceGrotesk-SemiBold.woff": "/static/media/SpaceGrotesk-SemiBold.e56e69b87cb9f4eda2a5.woff",
+    "static/media/SpaceGrotesk-Medium.woff": "/static/media/SpaceGrotesk-Medium.681c76e0532bc4dc7b3b.woff",
+    "static/media/SpaceGrotesk-Light.woff": "/static/media/SpaceGrotesk-Light.fb215d114b7700b78d55.woff",
+    "static/media/SpaceGrotesk-Bold.woff": "/static/media/SpaceGrotesk-Bold.e90b50b9c4154d34b2cc.woff",
+    "static/media/SpaceGrotesk-Regular.woff2": "/static/media/SpaceGrotesk-Regular.ef42475d7b3589476b29.woff2",
+    "static/media/SpaceGrotesk-SemiBold.woff2": "/static/media/SpaceGrotesk-SemiBold.aeb509371e94f13e1c32.woff2",
+    "static/media/SpaceGrotesk-Medium.woff2": "/static/media/SpaceGrotesk-Medium.60dc59c3cfdeb849edbd.woff2",
+    "static/media/SpaceGrotesk-Light.woff2": "/static/media/SpaceGrotesk-Light.c4fd48eca10abee809f1.woff2",
+    "static/media/SpaceGrotesk-Bold.woff2": "/static/media/SpaceGrotesk-Bold.69c2929585df2f8adfc2.woff2",
+    "index.html": "/index.html",
+    "main.3f1b4778.css.map": "/static/css/main.3f1b4778.css.map",
+    "main.f6c6414e.js.map": "/static/js/main.f6c6414e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f1b4778.css",
+    "static/js/main.f6c6414e.js"
+  ]
+}
