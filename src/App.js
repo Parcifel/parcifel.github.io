@@ -5,8 +5,8 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import Home from './pages/Home';
 import About from './pages/About';
 // import COnstruction from './pages/Construction'
+import MobileWarning from './components/MobileWarning';
 
-import ShimmerBackground from './components/ShimmerBackground';
 import ThemeSwitch from './components/ThemeSwitch';
 import CustomCursor from './components/CustomCursor';
 import { CursorProvider } from './components/CursorContext';
@@ -16,6 +16,7 @@ function App() {
   return (
     <ThemeProvider>
       <CursorProvider>
+        <MobileWarning />
         <CustomCursor />
         <ThemeSwitch />
 
@@ -24,7 +25,7 @@ function App() {
             <LayoutGroup>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
+                {/* <Route path="/about" element={<About />} /> */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </LayoutGroup>
